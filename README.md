@@ -4,6 +4,9 @@ Paper: Automated Generation and Semantic Enrichment of Data Products for Data Sp
 
 * Skosmos Flask api
   - Code: https://github.com/petrilinna/skosmosapi
+ 
+* Data products and schemas
+  - in this repository *.yaml
 
 * Custom-GPT 
   - tool https://chatgpt.com/g/g-6a06d7be6cec81918a4085717829e404-semantic-agricultural-data-product-tool
