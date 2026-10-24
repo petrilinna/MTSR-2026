@@ -5,6 +5,9 @@ Paper: Automated Generation and Semantic Enrichment of Data Products for Data Sp
 * Skosmos Flask api
   - Code: https://github.com/petrilinna/skosmosapi
  
+* Skosmof forged code
+   - https://github.com/petrilinna/Skosmos
+ 
 * Data products and schemas
   - in this repository *.yaml
 
