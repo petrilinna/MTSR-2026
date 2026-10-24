@@ -1,0 +1,294 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+title: Reusable schema for semantically enriched soil fertility analysis data products
+type: object
+required:
+- data_product
+properties:
+  data_product:
+    type: object
+    required:
+    - source
+    - dcat_ap
+    - standards
+    - units
+    - vocabulary_mappings
+    - samples
+    - grounding_validation
+    properties:
+      generated_at:
+        type: string
+        format: date
+      source:
+        type: object
+        properties:
+          file:
+            type:
+            - string
+            - 'null'
+          report_provider:
+            type:
+            - string
+            - 'null'
+          report_title:
+            type:
+            - string
+            - 'null'
+          report_date:
+            type:
+            - string
+            - 'null'
+            format: date
+          customer_number:
+            type:
+            - string
+            - 'null'
+          research_number:
+            type:
+            - string
+            - 'null'
+          customer_name:
+            type:
+            - string
+            - 'null'
+          farm:
+            type:
+            - object
+            - 'null'
+            properties:
+              farm_identifier:
+                type:
+                - string
+                - 'null'
+              farm_name:
+                type:
+                - string
+                - 'null'
+              semantic_type:
+                type:
+                - string
+                - 'null'
+                format: uri
+          customer_address:
+            type:
+            - object
+            - 'null'
+            properties:
+              street:
+                type:
+                - string
+                - 'null'
+              postal_code:
+                type:
+                - string
+                - 'null'
+              locality:
+                type:
+                - string
+                - 'null'
+          municipality:
+            type:
+            - string
+            - 'null'
+          sampling_date:
+            type:
+            - string
+            - 'null'
+            format: date
+          received_date:
+            type:
+            - string
+            - 'null'
+            format: date
+          advisory_organization:
+            type:
+            - string
+            - 'null'
+          sampler:
+            type:
+            - string
+            - 'null'
+          mark:
+            type:
+            - string
+            - 'null'
+      dcat_ap:
+        type: object
+        description: All 36 selected DCAT-AP Dataset properties; values may be null
+          when unavailable.
+        properties:
+          dct:description: {}
+          dct:title: {}
+          dcat:contactPoint: {}
+          dcat:distribution: {}
+          dct:spatial: {}
+          dcat:keyword: {}
+          dct:publisher: {}
+          dct:temporal: {}
+          dcat:theme: {}
+          dct:accessRights: {}
+          dcatap:applicableLegislation: {}
+          dct:conformsTo: {}
+          dct:creator: {}
+          foaf:page: {}
+          dct:accrualPeriodicity: {}
+          dcat:hasVersion: {}
+          dct:identifier: {}
+          dcat:inSeries: {}
+          dct:isReferencedBy: {}
+          dcat:landingPage: {}
+          dct:language: {}
+          dct:modified: {}
+          adms:identifier: {}
+          dct:provenance: {}
+          prov:qualifiedAttribution: {}
+          dcat:qualifiedRelation: {}
+          dct:relation: {}
+          dct:issued: {}
+          adms:sample: {}
+          dct:source: {}
+          dcat:spatialResolutionInMeters: {}
+          dcat:temporalResolution: {}
+          dct:type: {}
+          dcat:version: {}
+          adms:versionNotes: {}
+          prov:wasGeneratedBy: {}
+        required:
+        - dct:description
+        - dct:title
+        - dcat:contactPoint
+        - dcat:distribution
+        - dct:spatial
+        - dcat:keyword
+        - dct:publisher
+        - dct:temporal
+        - dcat:theme
+        - dct:accessRights
+        - dcatap:applicableLegislation
+        - dct:conformsTo
+        - dct:creator
+        - foaf:page
+        - dct:accrualPeriodicity
+        - dcat:hasVersion
+        - dct:identifier
+        - dcat:inSeries
+        - dct:isReferencedBy
+        - dcat:landingPage
+        - dct:language
+        - dct:modified
+        - adms:identifier
+        - dct:provenance
+        - prov:qualifiedAttribution
+        - dcat:qualifiedRelation
+        - dct:relation
+        - dct:issued
+        - adms:sample
+        - dct:source
+        - dcat:spatialResolutionInMeters
+        - dcat:temporalResolution
+        - dct:type
+        - dcat:version
+        - adms:versionNotes
+        - prov:wasGeneratedBy
+        additionalProperties: false
+      dcat_ap_traceability:
+        type: object
+        additionalProperties:
+          type: string
+      standards:
+        type: object
+      units:
+        type: object
+      vocabulary_mappings:
+        type: object
+      fertility_class_legend:
+        type: object
+        additionalProperties:
+          type: string
+      analysis_methods_and_uncertainty:
+        type: object
+      samples:
+        type: array
+        items:
+          type: object
+          required:
+          - sample_number
+          - basic_parcel_identifier
+          - topsoil_soil_type_code
+          - humus_class_code
+          - electrical_conductivity
+          - soil_pH
+          - calcium
+          - phosphorus
+          - potassium
+          - magnesium
+          - sulfur
+          properties:
+            sample_number:
+              type: integer
+              minimum: 1
+            sample_name:
+              type:
+              - string
+              - 'null'
+            basic_parcel_identifier:
+              type:
+              - string
+              - 'null'
+              x-semantic-type: https://saref.etsi.org/saref4agri/Parcel
+            topsoil_soil_type_code:
+              type:
+              - string
+              - 'null'
+              x-vocabulary: http://aims.fao.org/aos/agrovoc/c_7204
+            humus_class_code:
+              type:
+              - string
+              - 'null'
+              x-vocabulary: http://aims.fao.org/aos/agrovoc/c_35657
+            electrical_conductivity:
+              $ref: '#/$defs/measurement'
+            soil_pH:
+              $ref: '#/$defs/measurement'
+            calcium:
+              $ref: '#/$defs/measurement'
+            phosphorus:
+              $ref: '#/$defs/measurement'
+            potassium:
+              $ref: '#/$defs/measurement'
+            magnesium:
+              $ref: '#/$defs/measurement'
+            sulfur:
+              $ref: '#/$defs/measurement'
+            source_page:
+              type:
+              - integer
+              - 'null'
+              minimum: 1
+            semantic_types:
+              type: object
+      grounding_validation:
+        type: object
+$defs:
+  measurement:
+    type: object
+    required:
+    - value
+    - unit
+    properties:
+      value:
+        type: number
+      unit:
+        type: string
+      fertility_class:
+        type: object
+        properties:
+          code:
+            type: integer
+            minimum: 1
+            maximum: 7
+          label:
+            type: string
+        required:
+        - code
+        - label
+    x-semantic-type: https://saref.etsi.org/core/Measurement

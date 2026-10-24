@@ -1,0 +1,1474 @@
+#results has anonymized before publication. Those fields includes random names or numbers. Those fields are marked
+
+data_product:
+  generated_at: '2026-08-26'
+  source:
+    file: raportti2011.pdf
+    report_provider: VILJAVUUSPALVELU OY
+    report_title: VILJAVUUSTUTKIMUS
+    report_date: '2011-06-08'
+    customer_number: '123456'  #response anonymized before publication
+    research_number: '123456789' #response anonymized before publication
+    customer_name: first name sure name #response anonymized before publication
+    farm:
+      farm_identifier: '1234567890' #response anonymized before publication
+      farm_name: farm name is  #response anonymized before publication
+      semantic_type: https://saref.etsi.org/saref4agri/Farm
+    customer_address:
+      street: street 12345  #response anonymized before publication
+      postal_code: 123456  #response anonymized before publication
+      locality: village name is xxx  #response anonymized before publication
+    municipality: municipality is yyy #response anonymized before publication
+    sampling_date: '2010-09-15'
+    received_date: '2011-05-26'
+    advisory_organization: null
+    sampler: null
+    mark: null
+  dcat_ap:
+    dct:description: Soil fertility analysis report containing 23 soil samples with
+      topsoil type, humus class, electrical conductivity, pH, calcium, phosphorus,
+      potassium, magnesium, sulfur, and fertility classes.
+    dct:title: VILJAVUUSTUTKIMUS
+    dcat:contactPoint:
+      organization: VILJAVUUSPALVELU OY
+      email: neuvonta@viljavuuspalvelu.fi
+      phone: (015) 320 400
+      postal_address: PL 500, 50101 MIKKELI
+    dcat:distribution:
+    - file_name: raportti2011.pdf
+      format: PDF
+      media_type: application/pdf
+    dct:spatial:
+      municipality: Town yyy  #response anonymized before publication
+    dcat:keyword:
+    - 'CHECK: soil fertility'
+    - 'CHECK: soil pH'
+    - 'CHECK: electrical conductivity'
+    - 'CHECK: calcium'
+    - 'CHECK: phosphorus'
+    - 'CHECK: potassium'
+    - 'CHECK: magnesium'
+    - 'CHECK: sulfur'
+    dct:publisher: 'CHECK: VILJAVUUSPALVELU OY'
+    dct:temporal:
+      sampling_date: '2010-09-15'
+    dcat:theme:
+      label: soil fertility
+      uri: http://aims.fao.org/aos/agrovoc/c_7170
+    dct:accessRights: null
+    dcatap:applicableLegislation: null
+    dct:conformsTo:
+    - https://w3id.org/demeter/agri/3.0
+    - 'CHECK: ISO/IEC 17025 applies to determinations marked ''a)'' in the source
+      report, not necessarily to the dataset as a whole.'
+    dct:creator: 'CHECK: VILJAVUUSPALVELU OY'
+    foaf:page: null
+    dct:accrualPeriodicity: null
+    dcat:hasVersion: null
+    dct:identifier: '1234'  #response anonymized before publication
+    dcat:inSeries: null
+    dct:isReferencedBy: null
+    dcat:landingPage: null
+    dct:language: fi
+    dct:modified: null
+    adms:identifier:
+      customer_number: '1234'  #response anonymized before publication
+      research_number: '123456789'  #response anonymized before publication
+    dct:provenance: Semantically enriched from the supplied Viljavuuspalvelu Oy soil
+      fertility analysis report; values are transcribed from report pages 1–5.
+    prov:qualifiedAttribution: null
+    dcat:qualifiedRelation: null
+    dct:relation: null
+    dct:issued: '2011-06-08'
+    adms:sample: null
+    dct:source: raportti2011.pdf
+    dcat:spatialResolutionInMeters: null
+    dcat:temporalResolution: null
+    dct:type: 'CHECK: soil fertility analysis dataset'
+    dcat:version: null
+    adms:versionNotes: null
+    prov:wasGeneratedBy: 'CHECK: laboratory soil fertility analysis reported by VILJAVUUSPALVELU
+      OY'
+  dcat_ap_traceability:
+    dct:description: 'PDF pages 1–4: 23 sample tables and measured variables.'
+    dct:title: 'PDF pages 1–5: report heading ''VILJAVUUSTUTKIMUS''.'
+    dcat:contactPoint: 'PDF pages 1–5: Viljavuuspalvelu Oy email, telephone and postal
+      address.'
+    dcat:distribution: User-supplied source file name and PDF format.
+    dct:spatial: 'PDF pages 1–5: field ''Kunta'' = town xxx.' #response anonymized before publication
+    dcat:keyword: Derived from measured variables; CHECK-prefixed because the report
+      does not declare dataset keywords.
+    dct:publisher: CHECK-derived from the report provider shown in the header.
+    dct:temporal: 'PDF pages 1–5: ''Näytteenottopvm'' = 15.09.2010.'
+    dcat:theme: Derived from report title/content and AGROVOC vocabulary search; exact
+      AGROVOC match for soil fertility.
+    dct:accessRights: not available in source
+    dcatap:applicableLegislation: not available in source
+    dct:conformsTo: DEMETER AIM 3.0 is applied by this semantic enrichment; PDF page
+      5 states accredited ISO/IEC 17025 methods for determinations marked 'a)'.
+    dct:creator: CHECK-derived from the report provider shown in the header.
+    foaf:page: not available in source
+    dct:accrualPeriodicity: not available in source
+    dcat:hasVersion: not available in source
+    dct:identifier: 'PDF pages 1–5: ''Tutkimusnro'' = 123456789.' #response anonymized before publication
+    dcat:inSeries: not available in source
+    dct:isReferencedBy: not available in source
+    dcat:landingPage: not available in source
+    dct:language: Supported by the Finnish-language source report.
+    dct:modified: not available in source
+    adms:identifier: 'PDF pages 1–5: ''Asiakasnro'' and ''Tutkimusnro''.'
+    dct:provenance: Generated trace statement based on the supplied source report.
+    prov:qualifiedAttribution: not available in source
+    dcat:qualifiedRelation: not available in source
+    dct:relation: not available in source
+    dct:issued: 'PDF pages 1–5: ''Päivämäärä'' = 08.06.2011.'
+    adms:sample: not available as a separate dataset resource; sample rows are embedded
+      in the report.
+    dct:source: User-supplied source file.
+    dcat:spatialResolutionInMeters: not available in source
+    dcat:temporalResolution: not available in source
+    dct:type: CHECK-derived from report content.
+    dcat:version: not available in source
+    adms:versionNotes: not available in source
+    prov:wasGeneratedBy: CHECK-derived from report context.
+  standards:
+    selected_primary_standard:
+      name: DEMETER Agriculture Information Model (AIM)
+      version: '3.0'
+      uri: https://w3id.org/demeter/agri/3.0
+      applied_elements:
+      - saref4agri:Farm for the farm
+      - saref4agri:Parcel for basic parcel identifiers
+      - saref:Measurement for quantitative observations
+      - saref:hasFeatureOfInterest, saref:relatesToProperty, saref:isMeasuredIn, saref:hasValue
+        for measurement semantics
+      - SOSA Sample semantics for physical soil samples through AIM cross-domain reuse
+    ranked_candidates:
+    - rank: 1
+      name: DEMETER AIM 3.0 (AgriProperty + AgriFeature)
+      reason: 'Best domain fit: agricultural parcels/farms plus property/measurement
+        semantics are present in the provided AIM knowledge base.'
+    - rank: 2
+      name: SOSA/SSN
+      reason: Strong fit for samples, observations, features of interest and observed
+        properties, but domain-generic rather than agriculture-specific.
+    - rank: 3
+      name: SAREF4AGRI
+      reason: Strong agriculture-specific farm/parcel structure; used by AIM, but
+        the provided AIM AgriProperty profile adds the measurement/property layer
+        needed here.
+  units:
+    mg/L:
+      original: mg/l
+      normalized: mg/L
+      standardized_label: milligram per litre
+      identifier: http://qudt.org/vocab/unit/MilliGM-PER-L
+      used_by:
+      - calcium
+      - phosphorus
+      - potassium
+      - magnesium
+      - sulfur
+    conductivity_report_unit:
+      original: 10xmS/cm
+      normalized: 10 × mS/cm (as reported)
+      standardized_label: scaled millisiemens per centimetre, scale as printed in
+        source
+      identifier: null
+      note: No standardized identifier is asserted because the source does not explicitly
+        define how the leading factor 10 is to be interpreted.
+    pH:
+      original: pH
+      normalized: pH
+      standardized_label: pH scale
+      identifier: null
+      note: No unit URI asserted.
+  vocabulary_mappings:
+    report_theme:
+      field: VILJAVUUSTUTKIMUS / soil fertility
+      vocabulary: AGROVOC
+      label: soil fertility
+      uri: http://aims.fao.org/aos/agrovoc/c_7170
+      definition: 'Soil fertility: the ability of a soil to sustain plant growth by
+        providing essential plant nutrients and favourable chemical, physical, and
+        biological characteristics as a habitat for plant growth.'
+    topsoil:
+      field: Pintamaan maalaji
+      vocabulary: AGROVOC
+      label: topsoil
+      uri: http://aims.fao.org/aos/agrovoc/c_7812
+      definition: Soil consisting of various mixtures of sand, silt, clay and organic
+        matter; considered to be the nutrient-rich top layer of soil that supports
+        plant growth.
+    soil_type:
+      field: Pintamaan maalaji
+      vocabulary: AGROVOC
+      label: soil types
+      uri: http://aims.fao.org/aos/agrovoc/c_7204
+      definition: null
+    soil_organic_matter:
+      field: Multavuus
+      vocabulary: AGROVOC
+      label: soil organic matter
+      uri: http://aims.fao.org/aos/agrovoc/c_35657
+      definition: Matter consisting of plant and/or animal organic materials, and
+        the conversion products of those materials in soils.
+    electrical_conductivity:
+      field: Johtoluku
+      vocabulary: AGROVOC
+      label: electrical conductivity
+      uri: http://aims.fao.org/aos/agrovoc/c_24022
+      definition: Electrical conductivity (EC), σ, is a measure of a material’s ability
+        to carry an electrical current.
+    soil_pH:
+      field: Happamuus pH
+      vocabulary: AGROVOC
+      label: soil pH
+      uri: http://aims.fao.org/aos/agrovoc/c_34901
+      definition: Soil pH is a measure of the acidity or alkalinity of the soil.
+    calcium:
+      field: Kalsium (Ca)
+      vocabulary: AGROVOC
+      label: calcium
+      uri: http://aims.fao.org/aos/agrovoc/c_1196
+      definition: Calcium is a chemical element with symbol Ca and atomic number 20.
+    phosphorus:
+      field: Fosfori (P)
+      vocabulary: AGROVOC
+      label: phosphorus
+      uri: http://aims.fao.org/aos/agrovoc/c_5804
+      definition: Phosphorus is an essential mineral and chemical element.
+    potassium:
+      field: Kalium (K)
+      vocabulary: AGROVOC
+      label: potassium
+      uri: http://aims.fao.org/aos/agrovoc/c_6139
+      definition: null
+    magnesium:
+      field: Magnesium (Mg)
+      vocabulary: AGROVOC
+      label: magnesium
+      uri: http://aims.fao.org/aos/agrovoc/c_4517
+      definition: Magnesium is a chemical element with symbol Mg and atomic number
+        12.
+    sulfur:
+      field: Rikki (S)
+      vocabulary: AGROVOC
+      label: sulfur
+      uri: http://aims.fao.org/aos/agrovoc/c_7514
+      definition: null
+    no_suitable_match_selected:
+    - Päivämäärä
+    - Asiakasnro
+    - Tutkimusnro
+    - Näytteenottopvm
+    - Kunta
+    - Saapunut
+    - Neuvontajärjestö
+    - Näytteenottaja
+    - Merkki
+    - Näytteen numero
+    - Peruslohkotunnus
+    - Nimi
+    search_note: Vocabulary searches were performed for every source data field. No
+      concept was forced for administrative identifiers, dates, empty fields, or generic
+      labels when search results were unsuitable.
+  fertility_class_legend:
+    1: Huono
+    2: Huononlainen
+    3: Välttävä
+    4: Tyydyttävä
+    5: Hyvä
+    6: Korkea
+    7: Arvel. korkea
+  analysis_methods_and_uncertainty:
+    topsoil_soil_type:
+      method: MMPIMAAL.DOC.; Aistinvarainen määritys.
+      uncertainty_95_percent: null
+      accreditation_marker: a)
+    humus_class:
+      method: MMPIMAAL.DOC.; Aistinvarainen määritys.
+      uncertainty_95_percent: null
+      accreditation_marker: a)
+    electrical_conductivity:
+      method: Jl mitataan maa-vesi -suspensiosta. (1:2,5)
+      uncertainty_95_percent: null
+      accreditation_marker: null
+    soil_pH:
+      method: pH mitataan maa-vesi -suspensiosta. (1:2,5); Vuorinen, J. & Mäkitie
+        O. 1955; Methods of soil and plant analysis, 1986 Jokioinen.
+      uncertainty_95_percent: null
+      accreditation_marker: null
+    calcium:
+      method: MMVT.DOC. Uutto happamaan ammoniumasetaatti-liuokseen, mittaus ICP:llä.
+      uncertainty_95_percent: 15 %
+      accreditation_marker: a)
+    phosphorus:
+      method: MMVT.DOC. Uutto happamaan ammoniumasetaatti-liuokseen, ammoniummolybdaatti-kompleksin
+        spektrofotometrinen mittaus.
+      uncertainty_95_percent: 20 %
+      accreditation_marker: a)
+    potassium:
+      method: MMVT.DOC. Uutto happamaan ammoniumasetaatti-liuokseen, mittaus ICP:llä.
+      uncertainty_95_percent: 15 %
+      accreditation_marker: a)
+    magnesium:
+      method: MMVT.DOC. Uutto happamaan ammoniumasetaatti-liuokseen, mittaus ICP:llä.
+      uncertainty_95_percent: 15 %
+      accreditation_marker: a)
+    sulfur:
+      method: MMVT.DOC. Uutto happamaan ammoniumasetaatti-liuokseen, mittaus ICP:llä.
+        Viljavuusluokkien laskennassa käytetään toteamisrajaa.
+      uncertainty_95_percent: 9< 15 %; <9 50 %
+      accreditation_marker: a)
+    accreditation_note: Determinations marked 'a)' were made using a FINAS-accredited
+      method according to ISO/IEC 17025. The report states that the result concerns
+      only the sample received.
+  samples:
+  - sample_number: 1
+    sample_name: '1'
+    basic_parcel_identifier: 01955
+    topsoil_soil_type_code: hsHHt
+    humus_class_code: m
+    electrical_conductivity:
+      value: 1.8
+      unit: 10 × mS/cm (as reported)
+    soil_pH:
+      value: 6.2
+      unit: pH
+      fertility_class:
+        code: 5
+        label: Hyvä
+    calcium:
+      value: 1400
+      unit: mg/L
+      fertility_class:
+        code: 4
+        label: Tyydyttävä
+    phosphorus:
+      value: 9.3
+      unit: mg/L
+      fertility_class:
+        code: 4
+        label: Tyydyttävä
+    potassium:
+      value: 68
+      unit: mg/L
+      fertility_class:
+        code: 2
+        label: Huononlainen
+    magnesium:
+      value: 110
+      unit: mg/L
+      fertility_class:
+        code: 3
+        label: Välttävä
+    sulfur:
+      value: 13.1
+      unit: mg/L
+      fertility_class:
+        code: 4
+        label: Tyydyttävä
+    source_page: 1
+    semantic_types:
+      sample: http://www.w3.org/ns/sosa/Sample
+      parcel: https://saref.etsi.org/saref4agri/Parcel
+      measurement: https://saref.etsi.org/core/Measurement
+  - sample_number: 2
+    sample_name: '2'
+    basic_parcel_identifier: 01955
+    topsoil_soil_type_code: HHt
+    humus_class_code: rm
+    electrical_conductivity:
+      value: 4.6
+      unit: 10 × mS/cm (as reported)
+    soil_pH:
+      value: 5.3
+      unit: pH
+      fertility_class:
+        code: 3
+        label: Välttävä
+    calcium:
+      value: 1600
+      unit: mg/L
+      fertility_class:
+        code: 4
+        label: Tyydyttävä
+    phosphorus:
+      value: 5.7
+      unit: mg/L
+      fertility_class:
+        code: 3
+        label: Välttävä
+    potassium:
+      value: 40
+      unit: mg/L
+      fertility_class:
+        code: 2
+        label: Huononlainen
+    magnesium:
+      value: 190
+      unit: mg/L
+      fertility_class:
+        code: 4
+        label: Tyydyttävä
+    sulfur:
+      value: 22.5
+      unit: mg/L
+      fertility_class:
+        code: 5
+        label: Hyvä
+    source_page: 1
+    semantic_types:
+      sample: http://www.w3.org/ns/sosa/Sample
+      parcel: https://saref.etsi.org/saref4agri/Parcel
+      measurement: https://saref.etsi.org/core/Measurement
+  - sample_number: 3
+    sample_name: '3'
+    basic_parcel_identifier: 01955
+    topsoil_soil_type_code: hsHHt
+    humus_class_code: m
+    electrical_conductivity:
+      value: 2.1
+      unit: 10 × mS/cm (as reported)
+    soil_pH:
+      value: 6.3
+      unit: pH
+      fertility_class:
+        code: 5
+        label: Hyvä
+    calcium:
+      value: 1200
+      unit: mg/L
+      fertility_class:
+        code: 3
+        label: Välttävä
+    phosphorus:
+      value: 15.0
+      unit: mg/L
+      fertility_class:
+        code: 4
+        label: Tyydyttävä
+    potassium:
+      value: 150
+      unit: mg/L
+      fertility_class:
+        code: 4
+        label: Tyydyttävä
+    magnesium:
+      value: 190
+      unit: mg/L
+      fertility_class:
+        code: 4
+        label: Tyydyttävä
+    sulfur:
+      value: 13.3
+      unit: mg/L
+      fertility_class:
+        code: 4
+        label: Tyydyttävä
+    source_page: 1
+    semantic_types:
+      sample: http://www.w3.org/ns/sosa/Sample
+      parcel: https://saref.etsi.org/saref4agri/Parcel
+      measurement: https://saref.etsi.org/core/Measurement
+  - sample_number: 4
+    sample_name: '4'
+    basic_parcel_identifier: 01949
+    topsoil_soil_type_code: KHt
+    humus_class_code: m
+    electrical_conductivity:
+      value: 2.6
+      unit: 10 × mS/cm (as reported)
+    soil_pH:
+      value: 5.8
+      unit: pH
+      fertility_class:
+        code: 4
+        label: Tyydyttävä
+    calcium:
+      value: 810
+      unit: mg/L
+      fertility_class:
+        code: 3
+        label: Välttävä
+    phosphorus:
+      value: 8.0
+      unit: mg/L
+      fertility_class:
+        code: 3
+        label: Välttävä
+    potassium:
+      value: 75
+      unit: mg/L
+      fertility_class:
+        code: 3
+        label: Välttävä
+    magnesium:
+      value: 130
+      unit: mg/L
+      fertility_class:
+        code: 4
+        label: Tyydyttävä
+    sulfur:
+      value: 14.0
+      unit: mg/L
+      fertility_class:
+        code: 4
+        label: Tyydyttävä
+    source_page: 1
+    semantic_types:
+      sample: http://www.w3.org/ns/sosa/Sample
+      parcel: https://saref.etsi.org/saref4agri/Parcel
+      measurement: https://saref.etsi.org/core/Measurement
+  - sample_number: 5
+    sample_name: '5'
+    basic_parcel_identifier: 01949
+    topsoil_soil_type_code: HHt
+    humus_class_code: rm
+    electrical_conductivity:
+      value: 1.9
+      unit: 10 × mS/cm (as reported)
+    soil_pH:
+      value: 5.5
+      unit: pH
+      fertility_class:
+        code: 3
+        label: Välttävä
+    calcium:
+      value: 730
+      unit: mg/L
+      fertility_class:
+        code: 2
+        label: Huononlainen
+    phosphorus:
+      value: 8.2
+      unit: mg/L
+      fertility_class:
+        code: 4
+        label: Tyydyttävä
+    potassium:
+      value: 110
+      unit: mg/L
+      fertility_class:
+        code: 3
+        label: Välttävä
+    magnesium:
+      value: 130
+      unit: mg/L
+      fertility_class:
+        code: 4
+        label: Tyydyttävä
+    sulfur:
+      value: 16.7
+      unit: mg/L
+      fertility_class:
+        code: 5
+        label: Hyvä
+    source_page: 1
+    semantic_types:
+      sample: http://www.w3.org/ns/sosa/Sample
+      parcel: https://saref.etsi.org/saref4agri/Parcel
+      measurement: https://saref.etsi.org/core/Measurement
+  - sample_number: 6
+    sample_name: '6'
+    basic_parcel_identifier: 01956
+    topsoil_soil_type_code: hsHHt
+    humus_class_code: m
+    electrical_conductivity:
+      value: 2.8
+      unit: 10 × mS/cm (as reported)
+    soil_pH:
+      value: 6.6
+      unit: pH
+      fertility_class:
+        code: 6
+        label: Korkea
+    calcium:
+      value: 1900
+      unit: mg/L
+      fertility_class:
+        code: 4
+        label: Tyydyttävä
+    phosphorus:
+      value: 71.0
+      unit: mg/L
+      fertility_class:
+        code: 7
+        label: Arvel. korkea
+    potassium:
+      value: 200
+      unit: mg/L
+      fertility_class:
+        code: 5
+        label: Hyvä
+    magnesium:
+      value: 260
+      unit: mg/L
+      fertility_class:
+        code: 5
+        label: Hyvä
+    sulfur:
+      value: 16.9
+      unit: mg/L
+      fertility_class:
+        code: 5
+        label: Hyvä
+    source_page: 1
+    semantic_types:
+      sample: http://www.w3.org/ns/sosa/Sample
+      parcel: https://saref.etsi.org/saref4agri/Parcel
+      measurement: https://saref.etsi.org/core/Measurement
+  - sample_number: 7
+    sample_name: '7'
+    basic_parcel_identifier: 01956
+    topsoil_soil_type_code: ljHHt
+    humus_class_code: rm
+    electrical_conductivity:
+      value: 3.3
+      unit: 10 × mS/cm (as reported)
+    soil_pH:
+      value: 6.0
+      unit: pH
+      fertility_class:
+        code: 4
+        label: Tyydyttävä
+    calcium:
+      value: 1300
+      unit: mg/L
+      fertility_class:
+        code: 3
+        label: Välttävä
+    phosphorus:
+      value: 16.0
+      unit: mg/L
+      fertility_class:
+        code: 5
+        label: Hyvä
+    potassium:
+      value: 130
+      unit: mg/L
+      fertility_class:
+        code: 4
+        label: Tyydyttävä
+    magnesium:
+      value: 170
+      unit: mg/L
+      fertility_class:
+        code: 4
+        label: Tyydyttävä
+    sulfur:
+      value: 20.9
+      unit: mg/L
+      fertility_class:
+        code: 5
+        label: Hyvä
+    source_page: 1
+    semantic_types:
+      sample: http://www.w3.org/ns/sosa/Sample
+      parcel: https://saref.etsi.org/saref4agri/Parcel
+      measurement: https://saref.etsi.org/core/Measurement
+  - sample_number: 8
+    sample_name: '8'
+    basic_parcel_identifier: 01964
+    topsoil_soil_type_code: hsHHt
+    humus_class_code: rm
+    electrical_conductivity:
+      value: 2.8
+      unit: 10 × mS/cm (as reported)
+    soil_pH:
+      value: 6.4
+      unit: pH
+      fertility_class:
+        code: 5
+        label: Hyvä
+    calcium:
+      value: 1600
+      unit: mg/L
+      fertility_class:
+        code: 4
+        label: Tyydyttävä
+    phosphorus:
+      value: 39.0
+      unit: mg/L
+      fertility_class:
+        code: 6
+        label: Korkea
+    potassium:
+      value: 190
+      unit: mg/L
+      fertility_class:
+        code: 4
+        label: Tyydyttävä
+    magnesium:
+      value: 250
+      unit: mg/L
+      fertility_class:
+        code: 5
+        label: Hyvä
+    sulfur:
+      value: 15.3
+      unit: mg/L
+      fertility_class:
+        code: 5
+        label: Hyvä
+    source_page: 2
+    semantic_types:
+      sample: http://www.w3.org/ns/sosa/Sample
+      parcel: https://saref.etsi.org/saref4agri/Parcel
+      measurement: https://saref.etsi.org/core/Measurement
+  - sample_number: 9
+    sample_name: '9'
+    basic_parcel_identifier: 01954
+    topsoil_soil_type_code: hsHHt
+    humus_class_code: rm
+    electrical_conductivity:
+      value: 2.3
+      unit: 10 × mS/cm (as reported)
+    soil_pH:
+      value: 6.2
+      unit: pH
+      fertility_class:
+        code: 5
+        label: Hyvä
+    calcium:
+      value: 1500
+      unit: mg/L
+      fertility_class:
+        code: 4
+        label: Tyydyttävä
+    phosphorus:
+      value: 25.0
+      unit: mg/L
+      fertility_class:
+        code: 6
+        label: Korkea
+    potassium:
+      value: 180
+      unit: mg/L
+      fertility_class:
+        code: 4
+        label: Tyydyttävä
+    magnesium:
+      value: 210
+      unit: mg/L
+      fertility_class:
+        code: 5
+        label: Hyvä
+    sulfur:
+      value: 14.1
+      unit: mg/L
+      fertility_class:
+        code: 4
+        label: Tyydyttävä
+    source_page: 2
+    semantic_types:
+      sample: http://www.w3.org/ns/sosa/Sample
+      parcel: https://saref.etsi.org/saref4agri/Parcel
+      measurement: https://saref.etsi.org/core/Measurement
+  - sample_number: 10
+    sample_name: '10'
+    basic_parcel_identifier: 01953
+    topsoil_soil_type_code: ljHHt
+    humus_class_code: erm
+    electrical_conductivity:
+      value: 3.1
+      unit: 10 × mS/cm (as reported)
+    soil_pH:
+      value: 6.0
+      unit: pH
+      fertility_class:
+        code: 5
+        label: Hyvä
+    calcium:
+      value: 1400
+      unit: mg/L
+      fertility_class:
+        code: 4
+        label: Tyydyttävä
+    phosphorus:
+      value: 16.0
+      unit: mg/L
+      fertility_class:
+        code: 5
+        label: Hyvä
+    potassium:
+      value: 140
+      unit: mg/L
+      fertility_class:
+        code: 4
+        label: Tyydyttävä
+    magnesium:
+      value: 160
+      unit: mg/L
+      fertility_class:
+        code: 4
+        label: Tyydyttävä
+    sulfur:
+      value: 22.9
+      unit: mg/L
+      fertility_class:
+        code: 5
+        label: Hyvä
+    source_page: 2
+    semantic_types:
+      sample: http://www.w3.org/ns/sosa/Sample
+      parcel: https://saref.etsi.org/saref4agri/Parcel
+      measurement: https://saref.etsi.org/core/Measurement
+  - sample_number: 11
+    sample_name: '11'
+    basic_parcel_identifier: 01951
+    topsoil_soil_type_code: ljHHt
+    humus_class_code: rm
+    electrical_conductivity:
+      value: 2.3
+      unit: 10 × mS/cm (as reported)
+    soil_pH:
+      value: 6.2
+      unit: pH
+      fertility_class:
+        code: 5
+        label: Hyvä
+    calcium:
+      value: 1400
+      unit: mg/L
+      fertility_class:
+        code: 4
+        label: Tyydyttävä
+    phosphorus:
+      value: 37.0
+      unit: mg/L
+      fertility_class:
+        code: 6
+        label: Korkea
+    potassium:
+      value: 120
+      unit: mg/L
+      fertility_class:
+        code: 4
+        label: Tyydyttävä
+    magnesium:
+      value: 140
+      unit: mg/L
+      fertility_class:
+        code: 4
+        label: Tyydyttävä
+    sulfur:
+      value: 14.1
+      unit: mg/L
+      fertility_class:
+        code: 4
+        label: Tyydyttävä
+    source_page: 2
+    semantic_types:
+      sample: http://www.w3.org/ns/sosa/Sample
+      parcel: https://saref.etsi.org/saref4agri/Parcel
+      measurement: https://saref.etsi.org/core/Measurement
+  - sample_number: 12
+    sample_name: '12'
+    basic_parcel_identifier: 01950
+    topsoil_soil_type_code: Mm
+    humus_class_code: '-'
+    electrical_conductivity:
+      value: 2.9
+      unit: 10 × mS/cm (as reported)
+    soil_pH:
+      value: 5.4
+      unit: pH
+      fertility_class:
+        code: 4
+        label: Tyydyttävä
+    calcium:
+      value: 1100
+      unit: mg/L
+      fertility_class:
+        code: 3
+        label: Välttävä
+    phosphorus:
+      value: 11.0
+      unit: mg/L
+      fertility_class:
+        code: 4
+        label: Tyydyttävä
+    potassium:
+      value: 170
+      unit: mg/L
+      fertility_class:
+        code: 4
+        label: Tyydyttävä
+    magnesium:
+      value: 92
+      unit: mg/L
+      fertility_class:
+        code: 3
+        label: Välttävä
+    sulfur:
+      value: 24.8
+      unit: mg/L
+      fertility_class:
+        code: 5
+        label: Hyvä
+    source_page: 2
+    semantic_types:
+      sample: http://www.w3.org/ns/sosa/Sample
+      parcel: https://saref.etsi.org/saref4agri/Parcel
+      measurement: https://saref.etsi.org/core/Measurement
+  - sample_number: 13
+    sample_name: '13'
+    basic_parcel_identifier: 01963
+    topsoil_soil_type_code: HHt
+    humus_class_code: rm
+    electrical_conductivity:
+      value: 2.0
+      unit: 10 × mS/cm (as reported)
+    soil_pH:
+      value: 5.8
+      unit: pH
+      fertility_class:
+        code: 4
+        label: Tyydyttävä
+    calcium:
+      value: 1200
+      unit: mg/L
+      fertility_class:
+        code: 3
+        label: Välttävä
+    phosphorus:
+      value: 10.0
+      unit: mg/L
+      fertility_class:
+        code: 4
+        label: Tyydyttävä
+    potassium:
+      value: 66
+      unit: mg/L
+      fertility_class:
+        code: 2
+        label: Huononlainen
+    magnesium:
+      value: 99
+      unit: mg/L
+      fertility_class:
+        code: 3
+        label: Välttävä
+    sulfur:
+      value: 16.0
+      unit: mg/L
+      fertility_class:
+        code: 5
+        label: Hyvä
+    source_page: 2
+    semantic_types:
+      sample: http://www.w3.org/ns/sosa/Sample
+      parcel: https://saref.etsi.org/saref4agri/Parcel
+      measurement: https://saref.etsi.org/core/Measurement
+  - sample_number: 14
+    sample_name: '14'
+    basic_parcel_identifier: 01963
+    topsoil_soil_type_code: hsHHt
+    humus_class_code: m
+    electrical_conductivity:
+      value: 2.8
+      unit: 10 × mS/cm (as reported)
+    soil_pH:
+      value: 6.4
+      unit: pH
+      fertility_class:
+        code: 5
+        label: Hyvä
+    calcium:
+      value: 1600
+      unit: mg/L
+      fertility_class:
+        code: 4
+        label: Tyydyttävä
+    phosphorus:
+      value: 27.0
+      unit: mg/L
+      fertility_class:
+        code: 5
+        label: Hyvä
+    potassium:
+      value: 160
+      unit: mg/L
+      fertility_class:
+        code: 4
+        label: Tyydyttävä
+    magnesium:
+      value: 150
+      unit: mg/L
+      fertility_class:
+        code: 4
+        label: Tyydyttävä
+    sulfur:
+      value: 15.7
+      unit: mg/L
+      fertility_class:
+        code: 5
+        label: Hyvä
+    source_page: 2
+    semantic_types:
+      sample: http://www.w3.org/ns/sosa/Sample
+      parcel: https://saref.etsi.org/saref4agri/Parcel
+      measurement: https://saref.etsi.org/core/Measurement
+  - sample_number: 15
+    sample_name: '15'
+    basic_parcel_identifier: 01961
+    topsoil_soil_type_code: Mm
+    humus_class_code: '-'
+    electrical_conductivity:
+      value: 3.5
+      unit: 10 × mS/cm (as reported)
+    soil_pH:
+      value: 5.7
+      unit: pH
+      fertility_class:
+        code: 4
+        label: Tyydyttävä
+    calcium:
+      value: 2000
+      unit: mg/L
+      fertility_class:
+        code: 4
+        label: Tyydyttävä
+    phosphorus:
+      value: 9.9
+      unit: mg/L
+      fertility_class:
+        code: 4
+        label: Tyydyttävä
+    potassium:
+      value: 170
+      unit: mg/L
+      fertility_class:
+        code: 4
+        label: Tyydyttävä
+    magnesium:
+      value: 210
+      unit: mg/L
+      fertility_class:
+        code: 5
+        label: Hyvä
+    sulfur:
+      value: 25.8
+      unit: mg/L
+      fertility_class:
+        code: 5
+        label: Hyvä
+    source_page: 3
+    semantic_types:
+      sample: http://www.w3.org/ns/sosa/Sample
+      parcel: https://saref.etsi.org/saref4agri/Parcel
+      measurement: https://saref.etsi.org/core/Measurement
+  - sample_number: 16
+    sample_name: '16'
+    basic_parcel_identifier: 01961
+    topsoil_soil_type_code: hsHHt
+    humus_class_code: m
+    electrical_conductivity:
+      value: 2.2
+      unit: 10 × mS/cm (as reported)
+    soil_pH:
+      value: 6.1
+      unit: pH
+      fertility_class:
+        code: 4
+        label: Tyydyttävä
+    calcium:
+      value: 1200
+      unit: mg/L
+      fertility_class:
+        code: 3
+        label: Välttävä
+    phosphorus:
+      value: 10.0
+      unit: mg/L
+      fertility_class:
+        code: 4
+        label: Tyydyttävä
+    potassium:
+      value: 110
+      unit: mg/L
+      fertility_class:
+        code: 3
+        label: Välttävä
+    magnesium:
+      value: 170
+      unit: mg/L
+      fertility_class:
+        code: 4
+        label: Tyydyttävä
+    sulfur:
+      value: 14.9
+      unit: mg/L
+      fertility_class:
+        code: 4
+        label: Tyydyttävä
+    source_page: 3
+    semantic_types:
+      sample: http://www.w3.org/ns/sosa/Sample
+      parcel: https://saref.etsi.org/saref4agri/Parcel
+      measurement: https://saref.etsi.org/core/Measurement
+  - sample_number: 17
+    sample_name: '17'
+    basic_parcel_identifier: 01962
+    topsoil_soil_type_code: ljHHt
+    humus_class_code: erm
+    electrical_conductivity:
+      value: 3.3
+      unit: 10 × mS/cm (as reported)
+    soil_pH:
+      value: 5.7
+      unit: pH
+      fertility_class:
+        code: 4
+        label: Tyydyttävä
+    calcium:
+      value: 960
+      unit: mg/L
+      fertility_class:
+        code: 3
+        label: Välttävä
+    phosphorus:
+      value: 9.7
+      unit: mg/L
+      fertility_class:
+        code: 4
+        label: Tyydyttävä
+    potassium:
+      value: 110
+      unit: mg/L
+      fertility_class:
+        code: 3
+        label: Välttävä
+    magnesium:
+      value: 120
+      unit: mg/L
+      fertility_class:
+        code: 4
+        label: Tyydyttävä
+    sulfur:
+      value: 21.8
+      unit: mg/L
+      fertility_class:
+        code: 5
+        label: Hyvä
+    source_page: 3
+    semantic_types:
+      sample: http://www.w3.org/ns/sosa/Sample
+      parcel: https://saref.etsi.org/saref4agri/Parcel
+      measurement: https://saref.etsi.org/core/Measurement
+  - sample_number: 18
+    sample_name: '18'
+    basic_parcel_identifier: 01962
+    topsoil_soil_type_code: hsHHt
+    humus_class_code: m
+    electrical_conductivity:
+      value: 2.5
+      unit: 10 × mS/cm (as reported)
+    soil_pH:
+      value: 6.2
+      unit: pH
+      fertility_class:
+        code: 5
+        label: Hyvä
+    calcium:
+      value: 1000
+      unit: mg/L
+      fertility_class:
+        code: 3
+        label: Välttävä
+    phosphorus:
+      value: 18.0
+      unit: mg/L
+      fertility_class:
+        code: 5
+        label: Hyvä
+    potassium:
+      value: 150
+      unit: mg/L
+      fertility_class:
+        code: 4
+        label: Tyydyttävä
+    magnesium:
+      value: 150
+      unit: mg/L
+      fertility_class:
+        code: 4
+        label: Tyydyttävä
+    sulfur:
+      value: 13.0
+      unit: mg/L
+      fertility_class:
+        code: 4
+        label: Tyydyttävä
+    source_page: 3
+    semantic_types:
+      sample: http://www.w3.org/ns/sosa/Sample
+      parcel: https://saref.etsi.org/saref4agri/Parcel
+      measurement: https://saref.etsi.org/core/Measurement
+  - sample_number: 19
+    sample_name: '19'
+    basic_parcel_identifier: '00325'
+    topsoil_soil_type_code: HHt
+    humus_class_code: erm
+    electrical_conductivity:
+      value: 2.7
+      unit: 10 × mS/cm (as reported)
+    soil_pH:
+      value: 5.3
+      unit: pH
+      fertility_class:
+        code: 3
+        label: Välttävä
+    calcium:
+      value: 900
+      unit: mg/L
+      fertility_class:
+        code: 3
+        label: Välttävä
+    phosphorus:
+      value: 8.9
+      unit: mg/L
+      fertility_class:
+        code: 4
+        label: Tyydyttävä
+    potassium:
+      value: 140
+      unit: mg/L
+      fertility_class:
+        code: 4
+        label: Tyydyttävä
+    magnesium:
+      value: 93
+      unit: mg/L
+      fertility_class:
+        code: 3
+        label: Välttävä
+    sulfur:
+      value: 17.9
+      unit: mg/L
+      fertility_class:
+        code: 5
+        label: Hyvä
+    source_page: 3
+    semantic_types:
+      sample: http://www.w3.org/ns/sosa/Sample
+      parcel: https://saref.etsi.org/saref4agri/Parcel
+      measurement: https://saref.etsi.org/core/Measurement
+  - sample_number: 20
+    sample_name: '20'
+    basic_parcel_identifier: 01952
+    topsoil_soil_type_code: hsHHt
+    humus_class_code: m
+    electrical_conductivity:
+      value: 3.1
+      unit: 10 × mS/cm (as reported)
+    soil_pH:
+      value: 6.7
+      unit: pH
+      fertility_class:
+        code: 6
+        label: Korkea
+    calcium:
+      value: 1800
+      unit: mg/L
+      fertility_class:
+        code: 4
+        label: Tyydyttävä
+    phosphorus:
+      value: 19.0
+      unit: mg/L
+      fertility_class:
+        code: 5
+        label: Hyvä
+    potassium:
+      value: 110
+      unit: mg/L
+      fertility_class:
+        code: 3
+        label: Välttävä
+    magnesium:
+      value: 170
+      unit: mg/L
+      fertility_class:
+        code: 4
+        label: Tyydyttävä
+    sulfur:
+      value: 13.5
+      unit: mg/L
+      fertility_class:
+        code: 4
+        label: Tyydyttävä
+    source_page: 3
+    semantic_types:
+      sample: http://www.w3.org/ns/sosa/Sample
+      parcel: https://saref.etsi.org/saref4agri/Parcel
+      measurement: https://saref.etsi.org/core/Measurement
+  - sample_number: 21
+    sample_name: '21'
+    basic_parcel_identifier: 01957
+    topsoil_soil_type_code: He
+    humus_class_code: m
+    electrical_conductivity:
+      value: 2.9
+      unit: 10 × mS/cm (as reported)
+    soil_pH:
+      value: 6.0
+      unit: pH
+      fertility_class:
+        code: 4
+        label: Tyydyttävä
+    calcium:
+      value: 1400
+      unit: mg/L
+      fertility_class:
+        code: 4
+        label: Tyydyttävä
+    phosphorus:
+      value: 8.9
+      unit: mg/L
+      fertility_class:
+        code: 3
+        label: Välttävä
+    potassium:
+      value: 140
+      unit: mg/L
+      fertility_class:
+        code: 4
+        label: Tyydyttävä
+    magnesium:
+      value: 91
+      unit: mg/L
+      fertility_class:
+        code: 3
+        label: Välttävä
+    sulfur:
+      value: 16.2
+      unit: mg/L
+      fertility_class:
+        code: 5
+        label: Hyvä
+    source_page: 3
+    semantic_types:
+      sample: http://www.w3.org/ns/sosa/Sample
+      parcel: https://saref.etsi.org/saref4agri/Parcel
+      measurement: https://saref.etsi.org/core/Measurement
+  - sample_number: 22
+    sample_name: '22'
+    basic_parcel_identifier: 06841
+    topsoil_soil_type_code: Mm
+    humus_class_code: '-'
+    electrical_conductivity:
+      value: 4.5
+      unit: 10 × mS/cm (as reported)
+    soil_pH:
+      value: 5.4
+      unit: pH
+      fertility_class:
+        code: 4
+        label: Tyydyttävä
+    calcium:
+      value: 2300
+      unit: mg/L
+      fertility_class:
+        code: 4
+        label: Tyydyttävä
+    phosphorus:
+      value: 6.1
+      unit: mg/L
+      fertility_class:
+        code: 3
+        label: Välttävä
+    potassium:
+      value: 150
+      unit: mg/L
+      fertility_class:
+        code: 4
+        label: Tyydyttävä
+    magnesium:
+      value: 150
+      unit: mg/L
+      fertility_class:
+        code: 4
+        label: Tyydyttävä
+    sulfur:
+      value: 24.9
+      unit: mg/L
+      fertility_class:
+        code: 5
+        label: Hyvä
+    source_page: 4
+    semantic_types:
+      sample: http://www.w3.org/ns/sosa/Sample
+      parcel: https://saref.etsi.org/saref4agri/Parcel
+      measurement: https://saref.etsi.org/core/Measurement
+  - sample_number: 23
+    sample_name: '23'
+    basic_parcel_identifier: 06841
+    topsoil_soil_type_code: He
+    humus_class_code: m
+    electrical_conductivity:
+      value: 2.1
+      unit: 10 × mS/cm (as reported)
+    soil_pH:
+      value: 5.6
+      unit: pH
+      fertility_class:
+        code: 3
+        label: Välttävä
+    calcium:
+      value: 850
+      unit: mg/L
+      fertility_class:
+        code: 3
+        label: Välttävä
+    phosphorus:
+      value: 5.8
+      unit: mg/L
+      fertility_class:
+        code: 2
+        label: Huononlainen
+    potassium:
+      value: 99
+      unit: mg/L
+      fertility_class:
+        code: 3
+        label: Välttävä
+    magnesium:
+      value: 130
+      unit: mg/L
+      fertility_class:
+        code: 4
+        label: Tyydyttävä
+    sulfur:
+      value: 9.7
+      unit: mg/L
+      fertility_class:
+        code: 3
+        label: Välttävä
+    source_page: 4
+    semantic_types:
+      sample: http://www.w3.org/ns/sosa/Sample
+      parcel: https://saref.etsi.org/saref4agri/Parcel
+      measurement: https://saref.etsi.org/core/Measurement
+  grounding_validation:
+    status: passed_with_check_flags
+    supported_value_sources:
+    - raportti2011.pdf
+    - provided DEMETER AIM / SAREF / SOSA knowledge-base files
+    - connected vocabulary search service
+    unsupported_values_removed: true
+    check_flag_rule: Any metadata inference not explicitly stated in the source report
+      is prefixed with 'CHECK:'.
+    known_unresolved_points:
+    - Meaning/expansion of soil type codes (for example hsHHt, HHt, KHt, ljHHt, Mm,
+      He) is not defined in the PDF and was not expanded.
+    - Meaning/expansion of humus codes (m, rm, erm) is not defined in the PDF and
+      was not expanded.
+    - The leading factor in the conductivity unit '10xmS/cm' is preserved as reported
+      and not converted.
+    - Publisher/creator roles are plausible from the report provider but are not explicitly
+      declared as DCAT roles.
+    - License, access rights, rights holder, purpose, contractual terms and distribution
+      access URL are not provided.

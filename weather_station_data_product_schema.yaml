@@ -1,0 +1,1684 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+$id: urn:semantic-agri:weather-station-observation-schema
+title: Reusable semantic schema for a weather-station JSON record array
+description: Reusable schema for the observed weather-station JSON field structure,
+  enriched with semantic mappings and without instance measurement values.
+type: array
+items:
+  type: object
+  properties:
+    ts:
+      description: Observation timestamp encoded as an integer Unix time in the source.
+      type: integer
+      x-semantic:
+        vocabulary_search_term: timestamp
+        vocabulary_mapping: null
+        standard_mapping:
+          semantic_role: result time
+          uri: http://www.w3.org/ns/sosa/resultTime
+          status: check
+          basis: 'CHECK: source field name suggests timestamp, but encoding semantics
+            are supplied by dataset context.'
+        unit: null
+    tz_offset:
+      description: Source time-zone offset value associated with the timestamp; unit
+        is not explicit.
+      type: integer
+      x-semantic:
+        vocabulary_search_term: time zone offset
+        vocabulary_mapping: null
+        standard_mapping: null
+        unit:
+          original_unit: null
+          normalized_unit: 'CHECK: second'
+          standardized_label: 'CHECK: second'
+          identifier: null
+          status: check
+          note: 'CHECK: time-zone offset unit is not explicit.'
+    bar_trend:
+      description: Barometric-pressure trend indicator/value; source scale is not
+        documented.
+      type: number
+      x-semantic:
+        vocabulary_search_term: barometric pressure trend
+        vocabulary_mapping:
+          vocabulary: AGROVOC
+          label: atmospheric pressure
+          uri: http://aims.fao.org/aos/agrovoc/c_693
+          definition: 'The gravitational force exerted by a column of air extending
+            from the point of concern to the outer limits of the atmosphere. Unit
+            of measurement: kilopascal (kPa).'
+          match_type: exact
+        standard_mapping:
+          semantic_role: pressure tendency
+          uri: https://smartdatamodels.org/dataModel.Weather/pressureTendency
+          status: supported
+          basis: DEMETER AgriProperty includes pressure tendency
+        unit:
+          original_unit: null
+          normalized_unit: null
+          standardized_label: null
+          identifier: null
+          status: not_available
+          note: Pressure-trend scale/unit is not encoded.
+    bar:
+      description: Barometric/atmospheric pressure reading.
+      type: number
+      x-semantic:
+        vocabulary_search_term: barometric pressure
+        vocabulary_mapping:
+          vocabulary: AGROVOC
+          label: atmospheric pressure
+          uri: http://aims.fao.org/aos/agrovoc/c_693
+          definition: 'The gravitational force exerted by a column of air extending
+            from the point of concern to the outer limits of the atmosphere. Unit
+            of measurement: kilopascal (kPa).'
+          match_type: exact
+        standard_mapping:
+          semantic_role: atmospheric pressure
+          uri: https://smartdatamodels.org/dataModel.Weather/atmosphericPressure
+          status: supported
+          basis: DEMETER AgriProperty includes this weather property; source field
+            bar is barometric pressure
+        unit:
+          original_unit: null
+          normalized_unit: 'CHECK: inch of mercury'
+          standardized_label: 'CHECK: inch of mercury'
+          identifier: null
+          status: check
+          note: 'CHECK: pressure unit is not encoded.'
+    temp_in:
+      description: Indoor temperature reading.
+      type: number
+      x-semantic:
+        vocabulary_search_term: indoor temperature
+        vocabulary_mapping:
+          vocabulary: AGROVOC
+          label: temperature
+          uri: http://aims.fao.org/aos/agrovoc/c_7657
+          definition: Temperature is a physical quantity that quantitatively expresses
+            the attribute of hotness or coldness.
+          match_type: exact
+        standard_mapping:
+          semantic_role: temperature
+          uri: https://smartdatamodels.org/dataModel.Weather/temperature
+          status: check
+          basis: indoor temperature naming; precise feature of interest is not supplied
+        unit:
+          original_unit: in
+          normalized_unit: inch
+          standardized_label: inch
+          identifier: null
+          status: supported
+          note: Unit token is interpreted as inch because a paired millimetre field
+            exists; rate fields do not encode the time denominator.
+    hum_in:
+      description: Indoor humidity reading.
+      type: number
+      x-semantic:
+        vocabulary_search_term: indoor relative humidity
+        vocabulary_mapping:
+          vocabulary: AGROVOC
+          label: humidity
+          uri: http://aims.fao.org/aos/agrovoc/c_3689
+          definition: Amount of water vapor in the air.
+          match_type: exact
+        standard_mapping:
+          semantic_role: humidity
+          uri: https://saref.etsi.org/saref4agri/AmbientHumidity
+          status: check
+          basis: source abbreviation hum; exact relative/absolute humidity type is
+            not stated
+        unit:
+          original_unit: in
+          normalized_unit: inch
+          standardized_label: inch
+          identifier: null
+          status: supported
+          note: Unit token is interpreted as inch because a paired millimetre field
+            exists; rate fields do not encode the time denominator.
+    temp_out:
+      description: Outdoor temperature reading.
+      type: number
+      x-semantic:
+        vocabulary_search_term: outdoor temperature
+        vocabulary_mapping:
+          vocabulary: AGROVOC
+          label: temperature
+          uri: http://aims.fao.org/aos/agrovoc/c_7657
+          definition: Temperature is a physical quantity that quantitatively expresses
+            the attribute of hotness or coldness.
+          match_type: exact
+        standard_mapping:
+          semantic_role: air/ambient temperature
+          uri: https://saref.etsi.org/saref4agri/AirTemperature
+          status: check
+          basis: outdoor temperature naming; source does not explicitly say air
+        unit:
+          original_unit: null
+          normalized_unit: 'CHECK: degree Fahrenheit'
+          standardized_label: 'CHECK: degree Fahrenheit'
+          identifier: null
+          status: check
+          note: 'CHECK: temperature unit is not explicit in the field name.'
+    wind_speed:
+      description: Wind-speed reading.
+      type: number
+      x-semantic:
+        vocabulary_search_term: wind speed
+        vocabulary_mapping:
+          vocabulary: AGROVOC
+          label: wind speed
+          uri: http://aims.fao.org/aos/agrovoc/c_29582
+          definition: null
+          match_type: exact
+        standard_mapping:
+          semantic_role: wind speed
+          uri: https://smartdatamodels.org/dataModel.Weather/windSpeed
+          status: supported
+          basis: DEMETER AgriProperty weather property; averaging/gust qualifier preserved
+            in source field
+        unit:
+          original_unit: null
+          normalized_unit: null
+          standardized_label: null
+          identifier: null
+          status: not_available
+          note: Wind-speed unit is not encoded.
+    wind_speed_10_min_avg:
+      description: Ten-minute average wind-speed reading.
+      type: number
+      x-semantic:
+        vocabulary_search_term: 10 minute average wind speed
+        vocabulary_mapping:
+          vocabulary: AGROVOC
+          label: wind speed
+          uri: http://aims.fao.org/aos/agrovoc/c_29582
+          definition: null
+          match_type: exact
+        standard_mapping:
+          semantic_role: wind speed
+          uri: https://smartdatamodels.org/dataModel.Weather/windSpeed
+          status: supported
+          basis: DEMETER AgriProperty weather property; averaging/gust qualifier preserved
+            in source field
+        unit:
+          original_unit: null
+          normalized_unit: null
+          standardized_label: null
+          identifier: null
+          status: not_available
+          note: Wind-speed unit is not encoded.
+    wind_dir:
+      description: Wind-direction reading.
+      type: number
+      x-semantic:
+        vocabulary_search_term: wind direction
+        vocabulary_mapping:
+          vocabulary: AGROVOC
+          label: wind direction
+          uri: http://aims.fao.org/aos/agrovoc/c_29583
+          definition: The direction from which the wind is blowing
+          match_type: exact
+        standard_mapping:
+          semantic_role: wind direction
+          uri: https://smartdatamodels.org/dataModel.Weather/windDirection
+          status: supported
+          basis: direct source-field meaning and DEMETER AgriProperty mapping
+        unit:
+          original_unit: null
+          normalized_unit: 'CHECK: degree'
+          standardized_label: 'CHECK: degree of direction'
+          identifier: null
+          status: check
+          note: 'CHECK: direction unit/convention is not explicit.'
+    temp_extra_1:
+      description: Extra temperature sensor channel 1.
+      type:
+      - number
+      - 'null'
+      x-semantic:
+        vocabulary_search_term: extra temperature sensor channel 1
+        vocabulary_mapping:
+          vocabulary: AGROVOC
+          label: temperature
+          uri: http://aims.fao.org/aos/agrovoc/c_7657
+          definition: Temperature is a physical quantity that quantitatively expresses
+            the attribute of hotness or coldness.
+          match_type: exact
+        standard_mapping: null
+        unit:
+          original_unit: null
+          normalized_unit: 'CHECK: degree Fahrenheit'
+          standardized_label: 'CHECK: degree Fahrenheit'
+          identifier: null
+          status: check
+          note: 'CHECK: temperature unit is not explicit in the field name.'
+      x-type-note: 'CHECK: numeric non-null type is inferred from field semantics
+        because the reference structure allows null for this channel.'
+    temp_extra_2:
+      description: Extra temperature sensor channel 2.
+      type:
+      - number
+      - 'null'
+      x-semantic:
+        vocabulary_search_term: extra temperature sensor channel 2
+        vocabulary_mapping:
+          vocabulary: AGROVOC
+          label: temperature
+          uri: http://aims.fao.org/aos/agrovoc/c_7657
+          definition: Temperature is a physical quantity that quantitatively expresses
+            the attribute of hotness or coldness.
+          match_type: exact
+        standard_mapping: null
+        unit:
+          original_unit: null
+          normalized_unit: 'CHECK: degree Fahrenheit'
+          standardized_label: 'CHECK: degree Fahrenheit'
+          identifier: null
+          status: check
+          note: 'CHECK: temperature unit is not explicit in the field name.'
+      x-type-note: 'CHECK: numeric non-null type is inferred from field semantics
+        because the reference structure allows null for this channel.'
+    temp_extra_3:
+      description: Extra temperature sensor channel 3.
+      type:
+      - number
+      - 'null'
+      x-semantic:
+        vocabulary_search_term: extra temperature sensor channel 3
+        vocabulary_mapping:
+          vocabulary: AGROVOC
+          label: temperature
+          uri: http://aims.fao.org/aos/agrovoc/c_7657
+          definition: Temperature is a physical quantity that quantitatively expresses
+            the attribute of hotness or coldness.
+          match_type: exact
+        standard_mapping: null
+        unit:
+          original_unit: null
+          normalized_unit: 'CHECK: degree Fahrenheit'
+          standardized_label: 'CHECK: degree Fahrenheit'
+          identifier: null
+          status: check
+          note: 'CHECK: temperature unit is not explicit in the field name.'
+      x-type-note: 'CHECK: numeric non-null type is inferred from field semantics
+        because the reference structure allows null for this channel.'
+    temp_extra_4:
+      description: Extra temperature sensor channel 4.
+      type:
+      - number
+      - 'null'
+      x-semantic:
+        vocabulary_search_term: extra temperature sensor channel 4
+        vocabulary_mapping:
+          vocabulary: AGROVOC
+          label: temperature
+          uri: http://aims.fao.org/aos/agrovoc/c_7657
+          definition: Temperature is a physical quantity that quantitatively expresses
+            the attribute of hotness or coldness.
+          match_type: exact
+        standard_mapping: null
+        unit:
+          original_unit: null
+          normalized_unit: 'CHECK: degree Fahrenheit'
+          standardized_label: 'CHECK: degree Fahrenheit'
+          identifier: null
+          status: check
+          note: 'CHECK: temperature unit is not explicit in the field name.'
+      x-type-note: 'CHECK: numeric non-null type is inferred from field semantics
+        because the reference structure allows null for this channel.'
+    temp_extra_5:
+      description: Extra temperature sensor channel 5.
+      type:
+      - number
+      - 'null'
+      x-semantic:
+        vocabulary_search_term: extra temperature sensor channel 5
+        vocabulary_mapping:
+          vocabulary: AGROVOC
+          label: temperature
+          uri: http://aims.fao.org/aos/agrovoc/c_7657
+          definition: Temperature is a physical quantity that quantitatively expresses
+            the attribute of hotness or coldness.
+          match_type: exact
+        standard_mapping: null
+        unit:
+          original_unit: null
+          normalized_unit: 'CHECK: degree Fahrenheit'
+          standardized_label: 'CHECK: degree Fahrenheit'
+          identifier: null
+          status: check
+          note: 'CHECK: temperature unit is not explicit in the field name.'
+      x-type-note: 'CHECK: numeric non-null type is inferred from field semantics
+        because the reference structure allows null for this channel.'
+    temp_extra_6:
+      description: Extra temperature sensor channel 6.
+      type:
+      - number
+      - 'null'
+      x-semantic:
+        vocabulary_search_term: extra temperature sensor channel 6
+        vocabulary_mapping:
+          vocabulary: AGROVOC
+          label: temperature
+          uri: http://aims.fao.org/aos/agrovoc/c_7657
+          definition: Temperature is a physical quantity that quantitatively expresses
+            the attribute of hotness or coldness.
+          match_type: exact
+        standard_mapping: null
+        unit:
+          original_unit: null
+          normalized_unit: 'CHECK: degree Fahrenheit'
+          standardized_label: 'CHECK: degree Fahrenheit'
+          identifier: null
+          status: check
+          note: 'CHECK: temperature unit is not explicit in the field name.'
+      x-type-note: 'CHECK: numeric non-null type is inferred from field semantics
+        because the reference structure allows null for this channel.'
+    temp_extra_7:
+      description: Extra temperature sensor channel 7.
+      type:
+      - number
+      - 'null'
+      x-semantic:
+        vocabulary_search_term: extra temperature sensor channel 7
+        vocabulary_mapping:
+          vocabulary: AGROVOC
+          label: temperature
+          uri: http://aims.fao.org/aos/agrovoc/c_7657
+          definition: Temperature is a physical quantity that quantitatively expresses
+            the attribute of hotness or coldness.
+          match_type: exact
+        standard_mapping: null
+        unit:
+          original_unit: null
+          normalized_unit: 'CHECK: degree Fahrenheit'
+          standardized_label: 'CHECK: degree Fahrenheit'
+          identifier: null
+          status: check
+          note: 'CHECK: temperature unit is not explicit in the field name.'
+      x-type-note: 'CHECK: numeric non-null type is inferred from field semantics
+        because the reference structure allows null for this channel.'
+    temp_soil_1:
+      description: Soil-temperature sensor channel 1.
+      type:
+      - number
+      - 'null'
+      x-semantic:
+        vocabulary_search_term: soil temperature channel 1
+        vocabulary_mapping:
+          vocabulary: AGROVOC
+          label: soil temperature
+          uri: http://aims.fao.org/aos/agrovoc/c_7197
+          definition: null
+          match_type: exact
+        standard_mapping:
+          semantic_role: soil temperature
+          uri: https://saref.etsi.org/saref4agri/SoilTemperature
+          status: supported
+          basis: direct DEMETER/SAREF4AGRI soil-temperature concept
+        unit:
+          original_unit: null
+          normalized_unit: 'CHECK: degree Fahrenheit'
+          standardized_label: 'CHECK: degree Fahrenheit'
+          identifier: null
+          status: check
+          note: 'CHECK: temperature unit is not explicit in the field name.'
+      x-type-note: 'CHECK: numeric non-null type is inferred from field semantics
+        because the reference structure allows null for this channel.'
+    temp_soil_2:
+      description: Soil-temperature sensor channel 2.
+      type:
+      - number
+      - 'null'
+      x-semantic:
+        vocabulary_search_term: soil temperature channel 2
+        vocabulary_mapping:
+          vocabulary: AGROVOC
+          label: soil temperature
+          uri: http://aims.fao.org/aos/agrovoc/c_7197
+          definition: null
+          match_type: exact
+        standard_mapping:
+          semantic_role: soil temperature
+          uri: https://saref.etsi.org/saref4agri/SoilTemperature
+          status: supported
+          basis: direct DEMETER/SAREF4AGRI soil-temperature concept
+        unit:
+          original_unit: null
+          normalized_unit: 'CHECK: degree Fahrenheit'
+          standardized_label: 'CHECK: degree Fahrenheit'
+          identifier: null
+          status: check
+          note: 'CHECK: temperature unit is not explicit in the field name.'
+      x-type-note: 'CHECK: numeric non-null type is inferred from field semantics
+        because the reference structure allows null for this channel.'
+    temp_soil_3:
+      description: Soil-temperature sensor channel 3.
+      type:
+      - number
+      - 'null'
+      x-semantic:
+        vocabulary_search_term: soil temperature channel 3
+        vocabulary_mapping:
+          vocabulary: AGROVOC
+          label: soil temperature
+          uri: http://aims.fao.org/aos/agrovoc/c_7197
+          definition: null
+          match_type: exact
+        standard_mapping:
+          semantic_role: soil temperature
+          uri: https://saref.etsi.org/saref4agri/SoilTemperature
+          status: supported
+          basis: direct DEMETER/SAREF4AGRI soil-temperature concept
+        unit:
+          original_unit: null
+          normalized_unit: 'CHECK: degree Fahrenheit'
+          standardized_label: 'CHECK: degree Fahrenheit'
+          identifier: null
+          status: check
+          note: 'CHECK: temperature unit is not explicit in the field name.'
+      x-type-note: 'CHECK: numeric non-null type is inferred from field semantics
+        because the reference structure allows null for this channel.'
+    temp_soil_4:
+      description: Soil-temperature sensor channel 4.
+      type:
+      - number
+      - 'null'
+      x-semantic:
+        vocabulary_search_term: soil temperature channel 4
+        vocabulary_mapping:
+          vocabulary: AGROVOC
+          label: soil temperature
+          uri: http://aims.fao.org/aos/agrovoc/c_7197
+          definition: null
+          match_type: exact
+        standard_mapping:
+          semantic_role: soil temperature
+          uri: https://saref.etsi.org/saref4agri/SoilTemperature
+          status: supported
+          basis: direct DEMETER/SAREF4AGRI soil-temperature concept
+        unit:
+          original_unit: null
+          normalized_unit: 'CHECK: degree Fahrenheit'
+          standardized_label: 'CHECK: degree Fahrenheit'
+          identifier: null
+          status: check
+          note: 'CHECK: temperature unit is not explicit in the field name.'
+      x-type-note: 'CHECK: numeric non-null type is inferred from field semantics
+        because the reference structure allows null for this channel.'
+    temp_leaf_1:
+      description: Leaf-temperature sensor channel 1.
+      type:
+      - number
+      - 'null'
+      x-semantic:
+        vocabulary_search_term: leaf temperature channel 1
+        vocabulary_mapping:
+          vocabulary: AGROVOC
+          label: temperature
+          uri: http://aims.fao.org/aos/agrovoc/c_7657
+          definition: Temperature is a physical quantity that quantitatively expresses
+            the attribute of hotness or coldness.
+          match_type: exact
+        standard_mapping: null
+        unit:
+          original_unit: null
+          normalized_unit: 'CHECK: degree Fahrenheit'
+          standardized_label: 'CHECK: degree Fahrenheit'
+          identifier: null
+          status: check
+          note: 'CHECK: temperature unit is not explicit in the field name.'
+      x-type-note: 'CHECK: numeric non-null type is inferred from field semantics
+        because the reference structure allows null for this channel.'
+    temp_leaf_2:
+      description: Leaf-temperature sensor channel 2.
+      type:
+      - number
+      - 'null'
+      x-semantic:
+        vocabulary_search_term: leaf temperature channel 2
+        vocabulary_mapping:
+          vocabulary: AGROVOC
+          label: temperature
+          uri: http://aims.fao.org/aos/agrovoc/c_7657
+          definition: Temperature is a physical quantity that quantitatively expresses
+            the attribute of hotness or coldness.
+          match_type: exact
+        standard_mapping: null
+        unit:
+          original_unit: null
+          normalized_unit: 'CHECK: degree Fahrenheit'
+          standardized_label: 'CHECK: degree Fahrenheit'
+          identifier: null
+          status: check
+          note: 'CHECK: temperature unit is not explicit in the field name.'
+      x-type-note: 'CHECK: numeric non-null type is inferred from field semantics
+        because the reference structure allows null for this channel.'
+    temp_leaf_3:
+      description: Leaf-temperature sensor channel 3.
+      type:
+      - number
+      - 'null'
+      x-semantic:
+        vocabulary_search_term: leaf temperature channel 3
+        vocabulary_mapping:
+          vocabulary: AGROVOC
+          label: temperature
+          uri: http://aims.fao.org/aos/agrovoc/c_7657
+          definition: Temperature is a physical quantity that quantitatively expresses
+            the attribute of hotness or coldness.
+          match_type: exact
+        standard_mapping: null
+        unit:
+          original_unit: null
+          normalized_unit: 'CHECK: degree Fahrenheit'
+          standardized_label: 'CHECK: degree Fahrenheit'
+          identifier: null
+          status: check
+          note: 'CHECK: temperature unit is not explicit in the field name.'
+      x-type-note: 'CHECK: numeric non-null type is inferred from field semantics
+        because the reference structure allows null for this channel.'
+    temp_leaf_4:
+      description: Leaf-temperature sensor channel 4.
+      type:
+      - number
+      - 'null'
+      x-semantic:
+        vocabulary_search_term: leaf temperature channel 4
+        vocabulary_mapping:
+          vocabulary: AGROVOC
+          label: temperature
+          uri: http://aims.fao.org/aos/agrovoc/c_7657
+          definition: Temperature is a physical quantity that quantitatively expresses
+            the attribute of hotness or coldness.
+          match_type: exact
+        standard_mapping: null
+        unit:
+          original_unit: null
+          normalized_unit: 'CHECK: degree Fahrenheit'
+          standardized_label: 'CHECK: degree Fahrenheit'
+          identifier: null
+          status: check
+          note: 'CHECK: temperature unit is not explicit in the field name.'
+      x-type-note: 'CHECK: numeric non-null type is inferred from field semantics
+        because the reference structure allows null for this channel.'
+    hum_out:
+      description: Outdoor humidity reading.
+      type: number
+      x-semantic:
+        vocabulary_search_term: outdoor relative humidity
+        vocabulary_mapping:
+          vocabulary: AGROVOC
+          label: humidity
+          uri: http://aims.fao.org/aos/agrovoc/c_3689
+          definition: Amount of water vapor in the air.
+          match_type: exact
+        standard_mapping:
+          semantic_role: humidity
+          uri: https://saref.etsi.org/saref4agri/AmbientHumidity
+          status: check
+          basis: source abbreviation hum; exact relative/absolute humidity type is
+            not stated
+        unit:
+          original_unit: null
+          normalized_unit: 'CHECK: percent'
+          standardized_label: 'CHECK: percent relative scale'
+          identifier: null
+          status: check
+          note: 'CHECK: humidity unit/type is not explicit in the field name.'
+    hum_extra_1:
+      description: Extra humidity sensor channel 1.
+      type:
+      - number
+      - 'null'
+      x-semantic:
+        vocabulary_search_term: extra humidity sensor channel 1
+        vocabulary_mapping:
+          vocabulary: AGROVOC
+          label: humidity
+          uri: http://aims.fao.org/aos/agrovoc/c_3689
+          definition: Amount of water vapor in the air.
+          match_type: exact
+        standard_mapping:
+          semantic_role: humidity
+          uri: https://saref.etsi.org/saref4agri/AmbientHumidity
+          status: check
+          basis: source abbreviation hum; exact relative/absolute humidity type is
+            not stated
+        unit:
+          original_unit: null
+          normalized_unit: 'CHECK: percent'
+          standardized_label: 'CHECK: percent relative scale'
+          identifier: null
+          status: check
+          note: 'CHECK: humidity unit/type is not explicit in the field name.'
+      x-type-note: 'CHECK: numeric non-null type is inferred from field semantics
+        because the reference structure allows null for this channel.'
+    hum_extra_2:
+      description: Extra humidity sensor channel 2.
+      type:
+      - number
+      - 'null'
+      x-semantic:
+        vocabulary_search_term: extra humidity sensor channel 2
+        vocabulary_mapping:
+          vocabulary: AGROVOC
+          label: humidity
+          uri: http://aims.fao.org/aos/agrovoc/c_3689
+          definition: Amount of water vapor in the air.
+          match_type: exact
+        standard_mapping:
+          semantic_role: humidity
+          uri: https://saref.etsi.org/saref4agri/AmbientHumidity
+          status: check
+          basis: source abbreviation hum; exact relative/absolute humidity type is
+            not stated
+        unit:
+          original_unit: null
+          normalized_unit: 'CHECK: percent'
+          standardized_label: 'CHECK: percent relative scale'
+          identifier: null
+          status: check
+          note: 'CHECK: humidity unit/type is not explicit in the field name.'
+      x-type-note: 'CHECK: numeric non-null type is inferred from field semantics
+        because the reference structure allows null for this channel.'
+    hum_extra_3:
+      description: Extra humidity sensor channel 3.
+      type:
+      - number
+      - 'null'
+      x-semantic:
+        vocabulary_search_term: extra humidity sensor channel 3
+        vocabulary_mapping:
+          vocabulary: AGROVOC
+          label: humidity
+          uri: http://aims.fao.org/aos/agrovoc/c_3689
+          definition: Amount of water vapor in the air.
+          match_type: exact
+        standard_mapping:
+          semantic_role: humidity
+          uri: https://saref.etsi.org/saref4agri/AmbientHumidity
+          status: check
+          basis: source abbreviation hum; exact relative/absolute humidity type is
+            not stated
+        unit:
+          original_unit: null
+          normalized_unit: 'CHECK: percent'
+          standardized_label: 'CHECK: percent relative scale'
+          identifier: null
+          status: check
+          note: 'CHECK: humidity unit/type is not explicit in the field name.'
+      x-type-note: 'CHECK: numeric non-null type is inferred from field semantics
+        because the reference structure allows null for this channel.'
+    hum_extra_4:
+      description: Extra humidity sensor channel 4.
+      type:
+      - number
+      - 'null'
+      x-semantic:
+        vocabulary_search_term: extra humidity sensor channel 4
+        vocabulary_mapping:
+          vocabulary: AGROVOC
+          label: humidity
+          uri: http://aims.fao.org/aos/agrovoc/c_3689
+          definition: Amount of water vapor in the air.
+          match_type: exact
+        standard_mapping:
+          semantic_role: humidity
+          uri: https://saref.etsi.org/saref4agri/AmbientHumidity
+          status: check
+          basis: source abbreviation hum; exact relative/absolute humidity type is
+            not stated
+        unit:
+          original_unit: null
+          normalized_unit: 'CHECK: percent'
+          standardized_label: 'CHECK: percent relative scale'
+          identifier: null
+          status: check
+          note: 'CHECK: humidity unit/type is not explicit in the field name.'
+      x-type-note: 'CHECK: numeric non-null type is inferred from field semantics
+        because the reference structure allows null for this channel.'
+    hum_extra_5:
+      description: Extra humidity sensor channel 5.
+      type:
+      - number
+      - 'null'
+      x-semantic:
+        vocabulary_search_term: extra humidity sensor channel 5
+        vocabulary_mapping:
+          vocabulary: AGROVOC
+          label: humidity
+          uri: http://aims.fao.org/aos/agrovoc/c_3689
+          definition: Amount of water vapor in the air.
+          match_type: exact
+        standard_mapping:
+          semantic_role: humidity
+          uri: https://saref.etsi.org/saref4agri/AmbientHumidity
+          status: check
+          basis: source abbreviation hum; exact relative/absolute humidity type is
+            not stated
+        unit:
+          original_unit: null
+          normalized_unit: 'CHECK: percent'
+          standardized_label: 'CHECK: percent relative scale'
+          identifier: null
+          status: check
+          note: 'CHECK: humidity unit/type is not explicit in the field name.'
+      x-type-note: 'CHECK: numeric non-null type is inferred from field semantics
+        because the reference structure allows null for this channel.'
+    hum_extra_6:
+      description: Extra humidity sensor channel 6.
+      type:
+      - number
+      - 'null'
+      x-semantic:
+        vocabulary_search_term: extra humidity sensor channel 6
+        vocabulary_mapping:
+          vocabulary: AGROVOC
+          label: humidity
+          uri: http://aims.fao.org/aos/agrovoc/c_3689
+          definition: Amount of water vapor in the air.
+          match_type: exact
+        standard_mapping:
+          semantic_role: humidity
+          uri: https://saref.etsi.org/saref4agri/AmbientHumidity
+          status: check
+          basis: source abbreviation hum; exact relative/absolute humidity type is
+            not stated
+        unit:
+          original_unit: null
+          normalized_unit: 'CHECK: percent'
+          standardized_label: 'CHECK: percent relative scale'
+          identifier: null
+          status: check
+          note: 'CHECK: humidity unit/type is not explicit in the field name.'
+      x-type-note: 'CHECK: numeric non-null type is inferred from field semantics
+        because the reference structure allows null for this channel.'
+    hum_extra_7:
+      description: Extra humidity sensor channel 7.
+      type:
+      - number
+      - 'null'
+      x-semantic:
+        vocabulary_search_term: extra humidity sensor channel 7
+        vocabulary_mapping:
+          vocabulary: AGROVOC
+          label: humidity
+          uri: http://aims.fao.org/aos/agrovoc/c_3689
+          definition: Amount of water vapor in the air.
+          match_type: exact
+        standard_mapping:
+          semantic_role: humidity
+          uri: https://saref.etsi.org/saref4agri/AmbientHumidity
+          status: check
+          basis: source abbreviation hum; exact relative/absolute humidity type is
+            not stated
+        unit:
+          original_unit: null
+          normalized_unit: 'CHECK: percent'
+          standardized_label: 'CHECK: percent relative scale'
+          identifier: null
+          status: check
+          note: 'CHECK: humidity unit/type is not explicit in the field name.'
+      x-type-note: 'CHECK: numeric non-null type is inferred from field semantics
+        because the reference structure allows null for this channel.'
+    rain_rate_clicks:
+      description: Rainfall-rate representation; unit token/representation is encoded
+        in the field suffix.
+      type: integer
+      x-semantic:
+        vocabulary_search_term: rainfall rate counter clicks
+        vocabulary_mapping:
+          vocabulary: AGROVOC
+          label: rainfall
+          uri: http://aims.fao.org/aos/agrovoc/c_a060993c
+          definition: A measurement of how much water falls as rain or snow in a certain
+            period of time.
+          match_type: exact
+        standard_mapping:
+          semantic_role: precipitation/rainfall
+          uri: https://saref.etsi.org/saref4agri/Precipitation
+          status: supported
+          basis: direct rain field names; aggregation/rate qualifier preserved
+        unit:
+          original_unit: clicks
+          normalized_unit: count
+          standardized_label: count of sensor/logger clicks
+          identifier: null
+          status: supported
+          note: Count representation; conversion factor to physical rainfall depth
+            is not defined by the schema.
+    rain_rate_in:
+      description: Rainfall-rate representation; unit token/representation is encoded
+        in the field suffix.
+      type: number
+      x-semantic:
+        vocabulary_search_term: rainfall rate
+        vocabulary_mapping:
+          vocabulary: AGROVOC
+          label: rainfall
+          uri: http://aims.fao.org/aos/agrovoc/c_a060993c
+          definition: A measurement of how much water falls as rain or snow in a certain
+            period of time.
+          match_type: exact
+        standard_mapping:
+          semantic_role: precipitation/rainfall
+          uri: https://saref.etsi.org/saref4agri/Precipitation
+          status: supported
+          basis: direct rain field names; aggregation/rate qualifier preserved
+        unit:
+          original_unit: in
+          normalized_unit: inch
+          standardized_label: inch
+          identifier: null
+          status: supported
+          note: Unit token is interpreted as inch because a paired millimetre field
+            exists; rate fields do not encode the time denominator.
+    rain_rate_mm:
+      description: Rainfall-rate representation; unit token/representation is encoded
+        in the field suffix.
+      type: number
+      x-semantic:
+        vocabulary_search_term: rainfall rate
+        vocabulary_mapping:
+          vocabulary: AGROVOC
+          label: rainfall
+          uri: http://aims.fao.org/aos/agrovoc/c_a060993c
+          definition: A measurement of how much water falls as rain or snow in a certain
+            period of time.
+          match_type: exact
+        standard_mapping:
+          semantic_role: precipitation/rainfall
+          uri: https://saref.etsi.org/saref4agri/Precipitation
+          status: supported
+          basis: direct rain field names; aggregation/rate qualifier preserved
+        unit:
+          original_unit: mm
+          normalized_unit: millimetre
+          standardized_label: millimetre
+          identifier: http://www.ontology-of-units-of-measure.org/resource/om-2/millimetre
+          status: supported
+          note: Unit token is explicit in the field suffix; rate fields do not encode
+            the time denominator.
+    uv:
+      description: Ultraviolet-related reading; exact quantity/index is not documented.
+      type:
+      - number
+      - 'null'
+      x-semantic:
+        vocabulary_search_term: ultraviolet radiation
+        vocabulary_mapping:
+          vocabulary: AGROVOC
+          label: ultraviolet radiation
+          uri: http://aims.fao.org/aos/agrovoc/c_8046
+          definition: null
+          match_type: exact
+        standard_mapping: null
+        unit:
+          original_unit: null
+          normalized_unit: null
+          standardized_label: null
+          identifier: null
+          status: not_available
+          note: UV quantity/index and unit are not explicit.
+      x-type-note: 'CHECK: numeric non-null type is inferred from field semantics
+        because the reference structure allows null for this channel.'
+    solar_rad:
+      description: Solar-radiation reading.
+      type: number
+      x-semantic:
+        vocabulary_search_term: solar radiation
+        vocabulary_mapping:
+          vocabulary: AGROVOC
+          label: solar radiation
+          uri: http://aims.fao.org/aos/agrovoc/c_14415
+          definition: Amount of power received from the sun per unit area over a specified
+            period of time.
+          match_type: exact
+        standard_mapping:
+          semantic_role: solar radiation
+          uri: https://smartdatamodels.org/dataModel.Weather/solarRadiation
+          status: supported
+          basis: direct DEMETER AgriProperty mapping
+        unit:
+          original_unit: null
+          normalized_unit: 'CHECK: W/m2'
+          standardized_label: 'CHECK: watt per square metre'
+          identifier: null
+          status: check
+          note: 'CHECK: source field does not encode a unit; mapped standard property
+            specifies W/m2.'
+    rain_storm_clicks:
+      description: Rainfall accumulation for the source-defined storm period.
+      type: integer
+      x-semantic:
+        vocabulary_search_term: storm rainfall counter clicks
+        vocabulary_mapping:
+          vocabulary: AGROVOC
+          label: rainfall
+          uri: http://aims.fao.org/aos/agrovoc/c_a060993c
+          definition: A measurement of how much water falls as rain or snow in a certain
+            period of time.
+          match_type: exact
+        standard_mapping:
+          semantic_role: precipitation/rainfall
+          uri: https://saref.etsi.org/saref4agri/Precipitation
+          status: supported
+          basis: direct rain field names; aggregation/rate qualifier preserved
+        unit:
+          original_unit: clicks
+          normalized_unit: count
+          standardized_label: count of sensor/logger clicks
+          identifier: null
+          status: supported
+          note: Count representation; conversion factor to physical rainfall depth
+            is not defined by the schema.
+    rain_storm_in:
+      description: Rainfall accumulation for the source-defined storm period.
+      type: number
+      x-semantic:
+        vocabulary_search_term: storm rainfall
+        vocabulary_mapping:
+          vocabulary: AGROVOC
+          label: rainfall
+          uri: http://aims.fao.org/aos/agrovoc/c_a060993c
+          definition: A measurement of how much water falls as rain or snow in a certain
+            period of time.
+          match_type: exact
+        standard_mapping:
+          semantic_role: precipitation/rainfall
+          uri: https://saref.etsi.org/saref4agri/Precipitation
+          status: supported
+          basis: direct rain field names; aggregation/rate qualifier preserved
+        unit:
+          original_unit: in
+          normalized_unit: inch
+          standardized_label: inch
+          identifier: null
+          status: supported
+          note: Unit token is interpreted as inch because a paired millimetre field
+            exists; rate fields do not encode the time denominator.
+    rain_storm_mm:
+      description: Rainfall accumulation for the source-defined storm period.
+      type: number
+      x-semantic:
+        vocabulary_search_term: storm rainfall
+        vocabulary_mapping:
+          vocabulary: AGROVOC
+          label: rainfall
+          uri: http://aims.fao.org/aos/agrovoc/c_a060993c
+          definition: A measurement of how much water falls as rain or snow in a certain
+            period of time.
+          match_type: exact
+        standard_mapping:
+          semantic_role: precipitation/rainfall
+          uri: https://saref.etsi.org/saref4agri/Precipitation
+          status: supported
+          basis: direct rain field names; aggregation/rate qualifier preserved
+        unit:
+          original_unit: mm
+          normalized_unit: millimetre
+          standardized_label: millimetre
+          identifier: http://www.ontology-of-units-of-measure.org/resource/om-2/millimetre
+          status: supported
+          note: Unit token is explicit in the field suffix; rate fields do not encode
+            the time denominator.
+    rain_storm_start_date:
+      description: Timestamp associated with the start of the rain-storm accumulation
+        period.
+      type: integer
+      x-semantic:
+        vocabulary_search_term: storm start time
+        vocabulary_mapping: null
+        standard_mapping: null
+        unit: null
+    rain_day_clicks:
+      description: Rainfall accumulation for the source-defined day period.
+      type: integer
+      x-semantic:
+        vocabulary_search_term: daily rainfall counter clicks
+        vocabulary_mapping:
+          vocabulary: AGROVOC
+          label: rainfall
+          uri: http://aims.fao.org/aos/agrovoc/c_a060993c
+          definition: A measurement of how much water falls as rain or snow in a certain
+            period of time.
+          match_type: exact
+        standard_mapping:
+          semantic_role: precipitation/rainfall
+          uri: https://saref.etsi.org/saref4agri/Precipitation
+          status: supported
+          basis: direct rain field names; aggregation/rate qualifier preserved
+        unit:
+          original_unit: clicks
+          normalized_unit: count
+          standardized_label: count of sensor/logger clicks
+          identifier: null
+          status: supported
+          note: Count representation; conversion factor to physical rainfall depth
+            is not defined by the schema.
+    rain_day_in:
+      description: Rainfall accumulation for the source-defined day period.
+      type: number
+      x-semantic:
+        vocabulary_search_term: daily rainfall
+        vocabulary_mapping:
+          vocabulary: AGROVOC
+          label: rainfall
+          uri: http://aims.fao.org/aos/agrovoc/c_a060993c
+          definition: A measurement of how much water falls as rain or snow in a certain
+            period of time.
+          match_type: exact
+        standard_mapping:
+          semantic_role: precipitation/rainfall
+          uri: https://saref.etsi.org/saref4agri/Precipitation
+          status: supported
+          basis: direct rain field names; aggregation/rate qualifier preserved
+        unit:
+          original_unit: in
+          normalized_unit: inch
+          standardized_label: inch
+          identifier: null
+          status: supported
+          note: Unit token is interpreted as inch because a paired millimetre field
+            exists; rate fields do not encode the time denominator.
+    rain_day_mm:
+      description: Rainfall accumulation for the source-defined day period.
+      type: number
+      x-semantic:
+        vocabulary_search_term: daily rainfall
+        vocabulary_mapping:
+          vocabulary: AGROVOC
+          label: rainfall
+          uri: http://aims.fao.org/aos/agrovoc/c_a060993c
+          definition: A measurement of how much water falls as rain or snow in a certain
+            period of time.
+          match_type: exact
+        standard_mapping:
+          semantic_role: precipitation/rainfall
+          uri: https://saref.etsi.org/saref4agri/Precipitation
+          status: supported
+          basis: direct rain field names; aggregation/rate qualifier preserved
+        unit:
+          original_unit: mm
+          normalized_unit: millimetre
+          standardized_label: millimetre
+          identifier: http://www.ontology-of-units-of-measure.org/resource/om-2/millimetre
+          status: supported
+          note: Unit token is explicit in the field suffix; rate fields do not encode
+            the time denominator.
+    rain_month_clicks:
+      description: Rainfall accumulation for the source-defined month period.
+      type: integer
+      x-semantic:
+        vocabulary_search_term: monthly rainfall counter clicks
+        vocabulary_mapping:
+          vocabulary: AGROVOC
+          label: rainfall
+          uri: http://aims.fao.org/aos/agrovoc/c_a060993c
+          definition: A measurement of how much water falls as rain or snow in a certain
+            period of time.
+          match_type: exact
+        standard_mapping:
+          semantic_role: precipitation/rainfall
+          uri: https://saref.etsi.org/saref4agri/Precipitation
+          status: supported
+          basis: direct rain field names; aggregation/rate qualifier preserved
+        unit:
+          original_unit: clicks
+          normalized_unit: count
+          standardized_label: count of sensor/logger clicks
+          identifier: null
+          status: supported
+          note: Count representation; conversion factor to physical rainfall depth
+            is not defined by the schema.
+    rain_month_in:
+      description: Rainfall accumulation for the source-defined month period.
+      type: number
+      x-semantic:
+        vocabulary_search_term: monthly rainfall
+        vocabulary_mapping:
+          vocabulary: AGROVOC
+          label: rainfall
+          uri: http://aims.fao.org/aos/agrovoc/c_a060993c
+          definition: A measurement of how much water falls as rain or snow in a certain
+            period of time.
+          match_type: exact
+        standard_mapping:
+          semantic_role: precipitation/rainfall
+          uri: https://saref.etsi.org/saref4agri/Precipitation
+          status: supported
+          basis: direct rain field names; aggregation/rate qualifier preserved
+        unit:
+          original_unit: in
+          normalized_unit: inch
+          standardized_label: inch
+          identifier: null
+          status: supported
+          note: Unit token is interpreted as inch because a paired millimetre field
+            exists; rate fields do not encode the time denominator.
+    rain_month_mm:
+      description: Rainfall accumulation for the source-defined month period.
+      type: number
+      x-semantic:
+        vocabulary_search_term: monthly rainfall
+        vocabulary_mapping:
+          vocabulary: AGROVOC
+          label: rainfall
+          uri: http://aims.fao.org/aos/agrovoc/c_a060993c
+          definition: A measurement of how much water falls as rain or snow in a certain
+            period of time.
+          match_type: exact
+        standard_mapping:
+          semantic_role: precipitation/rainfall
+          uri: https://saref.etsi.org/saref4agri/Precipitation
+          status: supported
+          basis: direct rain field names; aggregation/rate qualifier preserved
+        unit:
+          original_unit: mm
+          normalized_unit: millimetre
+          standardized_label: millimetre
+          identifier: http://www.ontology-of-units-of-measure.org/resource/om-2/millimetre
+          status: supported
+          note: Unit token is explicit in the field suffix; rate fields do not encode
+            the time denominator.
+    rain_year_clicks:
+      description: Rainfall accumulation for the source-defined year period.
+      type: integer
+      x-semantic:
+        vocabulary_search_term: annual rainfall counter clicks
+        vocabulary_mapping:
+          vocabulary: AGROVOC
+          label: rainfall
+          uri: http://aims.fao.org/aos/agrovoc/c_a060993c
+          definition: A measurement of how much water falls as rain or snow in a certain
+            period of time.
+          match_type: exact
+        standard_mapping:
+          semantic_role: precipitation/rainfall
+          uri: https://saref.etsi.org/saref4agri/Precipitation
+          status: supported
+          basis: direct rain field names; aggregation/rate qualifier preserved
+        unit:
+          original_unit: clicks
+          normalized_unit: count
+          standardized_label: count of sensor/logger clicks
+          identifier: null
+          status: supported
+          note: Count representation; conversion factor to physical rainfall depth
+            is not defined by the schema.
+    rain_year_in:
+      description: Rainfall accumulation for the source-defined year period.
+      type: number
+      x-semantic:
+        vocabulary_search_term: annual rainfall
+        vocabulary_mapping:
+          vocabulary: AGROVOC
+          label: rainfall
+          uri: http://aims.fao.org/aos/agrovoc/c_a060993c
+          definition: A measurement of how much water falls as rain or snow in a certain
+            period of time.
+          match_type: exact
+        standard_mapping:
+          semantic_role: precipitation/rainfall
+          uri: https://saref.etsi.org/saref4agri/Precipitation
+          status: supported
+          basis: direct rain field names; aggregation/rate qualifier preserved
+        unit:
+          original_unit: in
+          normalized_unit: inch
+          standardized_label: inch
+          identifier: null
+          status: supported
+          note: Unit token is interpreted as inch because a paired millimetre field
+            exists; rate fields do not encode the time denominator.
+    rain_year_mm:
+      description: Rainfall accumulation for the source-defined year period.
+      type: number
+      x-semantic:
+        vocabulary_search_term: annual rainfall
+        vocabulary_mapping:
+          vocabulary: AGROVOC
+          label: rainfall
+          uri: http://aims.fao.org/aos/agrovoc/c_a060993c
+          definition: A measurement of how much water falls as rain or snow in a certain
+            period of time.
+          match_type: exact
+        standard_mapping:
+          semantic_role: precipitation/rainfall
+          uri: https://saref.etsi.org/saref4agri/Precipitation
+          status: supported
+          basis: direct rain field names; aggregation/rate qualifier preserved
+        unit:
+          original_unit: mm
+          normalized_unit: millimetre
+          standardized_label: millimetre
+          identifier: http://www.ontology-of-units-of-measure.org/resource/om-2/millimetre
+          status: supported
+          note: Unit token is explicit in the field suffix; rate fields do not encode
+            the time denominator.
+    et_day:
+      description: Evapotranspiration accumulation/value for the source-defined day
+        period.
+      type: number
+      x-semantic:
+        vocabulary_search_term: daily evapotranspiration
+        vocabulary_mapping:
+          vocabulary: AGROVOC
+          label: evapotranspiration
+          uri: http://aims.fao.org/aos/agrovoc/c_2741
+          definition: Process by which water is transferred from the land to the atmosphere
+            by evaporation from the soil and other surfaces and by transpiration from
+            plants.
+          match_type: exact
+        standard_mapping: null
+        unit:
+          original_unit: null
+          normalized_unit: null
+          standardized_label: null
+          identifier: null
+          status: not_available
+          note: Evapotranspiration unit is not encoded.
+    et_month:
+      description: Evapotranspiration accumulation/value for the source-defined month
+        period.
+      type: number
+      x-semantic:
+        vocabulary_search_term: monthly evapotranspiration
+        vocabulary_mapping:
+          vocabulary: AGROVOC
+          label: evapotranspiration
+          uri: http://aims.fao.org/aos/agrovoc/c_2741
+          definition: Process by which water is transferred from the land to the atmosphere
+            by evaporation from the soil and other surfaces and by transpiration from
+            plants.
+          match_type: exact
+        standard_mapping: null
+        unit:
+          original_unit: null
+          normalized_unit: null
+          standardized_label: null
+          identifier: null
+          status: not_available
+          note: Evapotranspiration unit is not encoded.
+    et_year:
+      description: Evapotranspiration accumulation/value for the source-defined year
+        period.
+      type: number
+      x-semantic:
+        vocabulary_search_term: annual evapotranspiration
+        vocabulary_mapping:
+          vocabulary: AGROVOC
+          label: evapotranspiration
+          uri: http://aims.fao.org/aos/agrovoc/c_2741
+          definition: Process by which water is transferred from the land to the atmosphere
+            by evaporation from the soil and other surfaces and by transpiration from
+            plants.
+          match_type: exact
+        standard_mapping: null
+        unit:
+          original_unit: null
+          normalized_unit: null
+          standardized_label: null
+          identifier: null
+          status: not_available
+          note: Evapotranspiration unit is not encoded.
+    moist_soil_1:
+      description: Soil-moisture sensor channel 1.
+      type:
+      - number
+      - 'null'
+      x-semantic:
+        vocabulary_search_term: soil moisture channel 1
+        vocabulary_mapping: null
+        standard_mapping:
+          semantic_role: soil moisture
+          uri: https://saref.etsi.org/saref4agri/SoilMoisture
+          status: supported
+          basis: direct DEMETER/SAREF4AGRI concept
+        unit:
+          original_unit: null
+          normalized_unit: null
+          standardized_label: null
+          identifier: null
+          status: not_available
+          note: Soil-moisture scale/unit is not encoded.
+      x-type-note: 'CHECK: numeric non-null type is inferred from field semantics
+        because the reference structure allows null for this channel.'
+    moist_soil_2:
+      description: Soil-moisture sensor channel 2.
+      type:
+      - number
+      - 'null'
+      x-semantic:
+        vocabulary_search_term: soil moisture channel 2
+        vocabulary_mapping: null
+        standard_mapping:
+          semantic_role: soil moisture
+          uri: https://saref.etsi.org/saref4agri/SoilMoisture
+          status: supported
+          basis: direct DEMETER/SAREF4AGRI concept
+        unit:
+          original_unit: null
+          normalized_unit: null
+          standardized_label: null
+          identifier: null
+          status: not_available
+          note: Soil-moisture scale/unit is not encoded.
+      x-type-note: 'CHECK: numeric non-null type is inferred from field semantics
+        because the reference structure allows null for this channel.'
+    moist_soil_3:
+      description: Soil-moisture sensor channel 3.
+      type:
+      - number
+      - 'null'
+      x-semantic:
+        vocabulary_search_term: soil moisture channel 3
+        vocabulary_mapping: null
+        standard_mapping:
+          semantic_role: soil moisture
+          uri: https://saref.etsi.org/saref4agri/SoilMoisture
+          status: supported
+          basis: direct DEMETER/SAREF4AGRI concept
+        unit:
+          original_unit: null
+          normalized_unit: null
+          standardized_label: null
+          identifier: null
+          status: not_available
+          note: Soil-moisture scale/unit is not encoded.
+      x-type-note: 'CHECK: numeric non-null type is inferred from field semantics
+        because the reference structure allows null for this channel.'
+    moist_soil_4:
+      description: Soil-moisture sensor channel 4.
+      type:
+      - number
+      - 'null'
+      x-semantic:
+        vocabulary_search_term: soil moisture channel 4
+        vocabulary_mapping: null
+        standard_mapping:
+          semantic_role: soil moisture
+          uri: https://saref.etsi.org/saref4agri/SoilMoisture
+          status: supported
+          basis: direct DEMETER/SAREF4AGRI concept
+        unit:
+          original_unit: null
+          normalized_unit: null
+          standardized_label: null
+          identifier: null
+          status: not_available
+          note: Soil-moisture scale/unit is not encoded.
+      x-type-note: 'CHECK: numeric non-null type is inferred from field semantics
+        because the reference structure allows null for this channel.'
+    wet_leaf_1:
+      description: Leaf-wetness sensor channel 1.
+      type:
+      - number
+      - 'null'
+      x-semantic:
+        vocabulary_search_term: leaf wetness channel 1
+        vocabulary_mapping:
+          vocabulary: NALT
+          label: leaf wetness
+          uri: https://lod.nal.usda.gov/nalt/284231
+          definition: null
+          match_type: exact
+        standard_mapping: null
+        unit:
+          original_unit: null
+          normalized_unit: null
+          standardized_label: null
+          identifier: null
+          status: not_available
+          note: Leaf-wetness scale/unit is not encoded.
+      x-type-note: 'CHECK: numeric non-null type is inferred from field semantics
+        because the reference structure allows null for this channel.'
+    wet_leaf_2:
+      description: Leaf-wetness sensor channel 2.
+      type:
+      - number
+      - 'null'
+      x-semantic:
+        vocabulary_search_term: leaf wetness channel 2
+        vocabulary_mapping:
+          vocabulary: NALT
+          label: leaf wetness
+          uri: https://lod.nal.usda.gov/nalt/284231
+          definition: null
+          match_type: exact
+        standard_mapping: null
+        unit:
+          original_unit: null
+          normalized_unit: null
+          standardized_label: null
+          identifier: null
+          status: not_available
+          note: Leaf-wetness scale/unit is not encoded.
+      x-type-note: 'CHECK: numeric non-null type is inferred from field semantics
+        because the reference structure allows null for this channel.'
+    wet_leaf_3:
+      description: Leaf-wetness sensor channel 3.
+      type:
+      - number
+      - 'null'
+      x-semantic:
+        vocabulary_search_term: leaf wetness channel 3
+        vocabulary_mapping:
+          vocabulary: NALT
+          label: leaf wetness
+          uri: https://lod.nal.usda.gov/nalt/284231
+          definition: null
+          match_type: exact
+        standard_mapping: null
+        unit:
+          original_unit: null
+          normalized_unit: null
+          standardized_label: null
+          identifier: null
+          status: not_available
+          note: Leaf-wetness scale/unit is not encoded.
+      x-type-note: 'CHECK: numeric non-null type is inferred from field semantics
+        because the reference structure allows null for this channel.'
+    wet_leaf_4:
+      description: Leaf-wetness sensor channel 4.
+      type: number
+      x-semantic:
+        vocabulary_search_term: leaf wetness channel 4
+        vocabulary_mapping:
+          vocabulary: NALT
+          label: leaf wetness
+          uri: https://lod.nal.usda.gov/nalt/284231
+          definition: null
+          match_type: exact
+        standard_mapping: null
+        unit:
+          original_unit: null
+          normalized_unit: null
+          standardized_label: null
+          identifier: null
+          status: not_available
+          note: Leaf-wetness scale/unit is not encoded.
+    forecast_rule:
+      description: Source forecast-rule code; code system is not documented.
+      type: integer
+      x-semantic:
+        vocabulary_search_term: weather forecast rule
+        vocabulary_mapping: null
+        standard_mapping: null
+        unit: null
+    forecast_desc:
+      description: Textual weather forecast description.
+      type: string
+      x-semantic:
+        vocabulary_search_term: weather forecast
+        vocabulary_mapping:
+          vocabulary: YSO
+          label: weather forecasts
+          uri: http://www.yso.fi/onto/yso/p24302
+          definition: null
+          match_type: exact
+        standard_mapping:
+          semantic_role: weather forecast description
+          uri: https://smartdatamodels.org/dataModel.Weather/WeatherForecast
+          status: supported
+          basis: DEMETER AgriProperty includes WeatherForecast class; source contains
+            textual forecast
+        unit: null
+    dew_point:
+      description: Dew-point reading.
+      type: number
+      x-semantic:
+        vocabulary_search_term: dew point
+        vocabulary_mapping:
+          vocabulary: AGROVOC
+          label: dew point
+          uri: http://aims.fao.org/aos/agrovoc/c_f3609849
+          definition: The temperature corresponding to saturation (100 percent relative
+            humidity) for a given absolute humidity at constant pressure.
+          match_type: exact
+        standard_mapping:
+          semantic_role: dew point
+          uri: https://smartdatamodels.org/dataModel.Weather/dewPoint
+          status: supported
+          basis: direct DEMETER AgriProperty mapping
+        unit:
+          original_unit: null
+          normalized_unit: 'CHECK: degree Fahrenheit'
+          standardized_label: 'CHECK: degree Fahrenheit'
+          identifier: null
+          status: check
+          note: 'CHECK: temperature unit is not explicit in the field name.'
+    heat_index:
+      description: Heat-index reading.
+      type: number
+      x-semantic:
+        vocabulary_search_term: heat index
+        vocabulary_mapping: null
+        standard_mapping: null
+        unit:
+          original_unit: null
+          normalized_unit: 'CHECK: degree Fahrenheit'
+          standardized_label: 'CHECK: degree Fahrenheit'
+          identifier: null
+          status: check
+          note: 'CHECK: temperature unit is not explicit in the field name.'
+    wind_chill:
+      description: Wind-chill reading.
+      type: number
+      x-semantic:
+        vocabulary_search_term: wind chill
+        vocabulary_mapping: null
+        standard_mapping: null
+        unit:
+          original_unit: null
+          normalized_unit: 'CHECK: degree Fahrenheit'
+          standardized_label: 'CHECK: degree Fahrenheit'
+          identifier: null
+          status: check
+          note: 'CHECK: temperature unit is not explicit in the field name.'
+    wind_gust_10_min:
+      description: Ten-minute wind-gust reading.
+      type: number
+      x-semantic:
+        vocabulary_search_term: 10 minute wind gust
+        vocabulary_mapping:
+          vocabulary: AGROVOC
+          label: wind speed
+          uri: http://aims.fao.org/aos/agrovoc/c_29582
+          definition: null
+          match_type: exact
+        standard_mapping:
+          semantic_role: wind speed
+          uri: https://smartdatamodels.org/dataModel.Weather/windSpeed
+          status: supported
+          basis: DEMETER AgriProperty weather property; averaging/gust qualifier preserved
+            in source field
+        unit:
+          original_unit: null
+          normalized_unit: null
+          standardized_label: null
+          identifier: null
+          status: not_available
+          note: Wind-speed unit is not encoded.
+  required:
+  - ts
+  - tz_offset
+  - bar_trend
+  - bar
+  - temp_in
+  - hum_in
+  - temp_out
+  - wind_speed
+  - wind_speed_10_min_avg
+  - wind_dir
+  - temp_extra_1
+  - temp_extra_2
+  - temp_extra_3
+  - temp_extra_4
+  - temp_extra_5
+  - temp_extra_6
+  - temp_extra_7
+  - temp_soil_1
+  - temp_soil_2
+  - temp_soil_3
+  - temp_soil_4
+  - temp_leaf_1
+  - temp_leaf_2
+  - temp_leaf_3
+  - temp_leaf_4
+  - hum_out
+  - hum_extra_1
+  - hum_extra_2
+  - hum_extra_3
+  - hum_extra_4
+  - hum_extra_5
+  - hum_extra_6
+  - hum_extra_7
+  - rain_rate_clicks
+  - rain_rate_in
+  - rain_rate_mm
+  - uv
+  - solar_rad
+  - rain_storm_clicks
+  - rain_storm_in
+  - rain_storm_mm
+  - rain_storm_start_date
+  - rain_day_clicks
+  - rain_day_in
+  - rain_day_mm
+  - rain_month_clicks
+  - rain_month_in
+  - rain_month_mm
+  - rain_year_clicks
+  - rain_year_in
+  - rain_year_mm
+  - et_day
+  - et_month
+  - et_year
+  - moist_soil_1
+  - moist_soil_2
+  - moist_soil_3
+  - moist_soil_4
+  - wet_leaf_1
+  - wet_leaf_2
+  - wet_leaf_3
+  - wet_leaf_4
+  - forecast_rule
+  - forecast_desc
+  - dew_point
+  - heat_index
+  - wind_chill
+  - wind_gust_10_min
+  additionalProperties: false
+x-semantic-profile:
+  selected_standard: DEMETER Agriculture Information Model (AIM) 3.0
+  system_class: https://saref.etsi.org/saref4agri/WeatherStation
+  observation_pattern: http://www.w3.org/ns/sosa/Observation
+  observed_property_relation: http://www.w3.org/ns/sosa/observedProperty
+  result_relation: http://www.w3.org/ns/sosa/hasResult
+  result_time: http://www.w3.org/ns/sosa/resultTime
+  note: Model each measurement field as an observation of its mapped property; station
+    identity and location are supplied by dataset context when available.

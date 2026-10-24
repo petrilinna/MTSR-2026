@@ -1,0 +1,420 @@
+data_product:
+  title: 'CHECK: Mustiala UAV photogrammetry and georeferenced point-cloud data product'
+  source: odm_bundle.txt
+  theme: UAV RGB imagery metadata, camera calibration, OpenDroneMap processing metadata,
+    and a georeferenced point cloud
+  schema_status: No predefined schema was supplied with the source dataset; this schema
+    was generated from the observed structure.
+  dcat_ap:
+    title:
+      value: 'CHECK: Mustiala UAV photogrammetry and georeferenced point-cloud data
+        product'
+      source: source file paths and bundle contents
+    description:
+      value: 'CHECK: Metadata bundle describing 11 DJI FC6360 RGB images, camera calibration,
+        OpenDroneMap processing, and a georeferenced LAZ/EPT point cloud.'
+      source: images.json, cameras.json, log.json, ept.json, point-cloud metadata
+    identifier:
+      value: not available
+      source: null
+    publisher:
+      value: not available
+      source: null
+    creator:
+      value: not available
+      source: null
+    contact_point:
+      value: not available
+      source: null
+    theme:
+      value: 'CHECK: remote sensing / agricultural UAV data'
+      source: RGB georeferenced UAV imagery and point-cloud content; agricultural
+        context is not explicitly stated in the bundle
+    keyword:
+      value:
+      - UAV
+      - RGB
+      - photogrammetry
+      - point cloud
+      - OpenDroneMap
+      - DJI FC6360
+      source: source fields and processing metadata
+    language:
+      value: not available
+      source: null
+    landing_page:
+      value: not available
+      source: null
+    issued:
+      value: not available
+      source: null
+    modified:
+      value: '2024-03-14T09:31:38Z'
+      source: odm_georeferenced_model.info.json now field; processing-metadata timestamp,
+        not necessarily dataset modification time
+    temporal_start:
+      value: '2023-06-12T10:17:43Z'
+      source: minimum images.json utc_time
+    temporal_end:
+      value: '2023-06-12T10:21:10Z'
+      source: maximum images.json utc_time
+    spatial:
+      value:
+        bbox_wgs84:
+        - 23.75451811
+        - 60.81850338
+        - 23.75587946
+        - 60.81920171
+      source: odm_georeferenced_model.info.json EPSG:4326 bbox
+    spatial_resolution:
+      value: not available
+      source: null
+    temporal_resolution:
+      value: not available
+      source: null
+    accrual_periodicity:
+      value: not available
+      source: null
+    conforms_to:
+      value:
+      - DEMETER Agriculture Information Model (AIM) 3.0
+      - SOSA/SSN
+      - GeoSPARQL
+      - QUDT
+      source: provided semantic-model knowledge base and selected mappings
+    access_rights:
+      value: not available
+      source: null
+    license:
+      value: not available
+      source: null
+    rights:
+      value: not available
+      source: null
+    provenance:
+      value: Generated from an ODM metadata bundle containing camera, image, processing,
+        EPT and point-cloud metadata.
+      source: odm_bundle.txt
+    source:
+      value: odm_bundle.txt
+      source: uploaded source
+    version:
+      value: not available
+      source: null
+    version_notes:
+      value: not available
+      source: null
+    has_version:
+      value: not available
+      source: null
+    is_version_of:
+      value: not available
+      source: null
+    relation:
+      value: not available
+      source: null
+    qualified_relation:
+      value: not available
+      source: null
+    distribution:
+      value:
+      - 'CHECK: source metadata text bundle'
+      - Referenced LAZ point cloud
+      - EPT metadata
+      source: bundle structure and point-cloud filenames
+    format:
+      value:
+      - JSON embedded in TXT
+      - LAZ referenced by metadata
+      - EPT JSON metadata
+      source: bundle sections and filenames
+    media_type:
+      value: not available
+      source: null
+    byte_size:
+      value: 2648886
+      source: odm_georeferenced_model.info.json file_size for referenced LAZ only
+    checksum:
+      value: not available
+      source: null
+    documentation:
+      value: not available
+      source: null
+  source_structure:
+    bundle_components:
+    - cameras.json
+    - images.json
+    - log.json
+    - ept-build.json
+    - ept.json
+    - 0-0-0-0.json
+    - manifest.json
+    - odm_georeferenced_model.json
+    - odm_georeferenced_model.boundary.json
+    - odm_georeferenced_model.info.json
+    - odm_georeferenced_model.summary.json
+    - stats.json
+    images:
+      count: 11
+      camera_make: DJI
+      camera_model: FC6360
+      dimensions_pixels:
+        width: 1600
+        height: 1300
+      band_name: RGB
+      capture_time_utc:
+        start: '2023-06-12T10:17:43Z'
+        end: '2023-06-12T10:21:10Z'
+      latitude_range_deg:
+      - 60.8186525
+      - 60.81964891666667
+      longitude_range_deg:
+      - 23.75489522222222
+      - 23.755979361111113
+      image_altitude_range_m:
+      - 241.59
+      - 243.09
+      f_number: 2.2
+      iso_speed: 200
+      exposure_time_range_s:
+      - 0.0001
+      - 0.00015625
+    camera_calibration:
+      projection_type: brown
+      focal_x: 1.0901261652432879
+      focal_y: 1.0901261652432879
+      c_x: -0.019686607158098304
+      c_y: -0.005639819147221716
+      k1: -0.05698616369983871
+      k2: -0.012123300788470754
+      p1: -0.0037698529250287114
+      p2: -0.01918566855414241
+      k3: -0.0028504765836524035
+    point_cloud:
+      points: 628062
+      crs: EPSG:32634
+      crs_label: WGS 84 / UTM zone 34N
+      bounds_conforming_native:
+      - 649799.0
+      - 6745719.0
+      - 159.0
+      - 649871.0
+      - 6745795.0
+      - 192.0
+      bbox_wgs84:
+      - 23.75451811
+      - 60.81850338
+      - 23.75587946
+      - 60.81920171
+      z_range_m:
+      - 159.346
+      - 191.398
+      boundary_area_m2: 3503.072758
+      average_point_spacing_m: 0.4723316984
+      density_points_per_m2: 4.482350521
+      referenced_laz_file_size_bytes: 2648886
+    processing:
+      software: OpenDroneMap
+      odm_version: 3.4.0
+      ept_software: Entwine
+      ept_version: 2.2.0
+      pdal_version: '2.4.3 (git-version: Release)'
+  standards:
+  - rank: 1
+    standard: DEMETER Agriculture Information Model (AIM) 3.0
+    role: Selected overarching agricultural semantic model; it reuses/alines SAREF4AGRI,
+      SOSA/SSN, GeoSPARQL and QUDT.
+  - rank: 2
+    standard: SOSA/SSN
+    role: Applied to camera/sensor, observations, observed properties, results and
+      feature-of-interest semantics.
+  - rank: 3
+    standard: GeoSPARQL
+    role: Applied to spatial geometry, coordinates, bounding boxes and CRS-related
+      spatial description.
+  - rank: 4
+    standard: QUDT
+    role: Applied to machine-readable units where verified unit identifiers are available.
+  units:
+  - fields:
+    - latitude
+    - longitude
+    - yaw
+    - pitch
+    - roll
+    - omega
+    - phi
+    - kappa
+    original: degrees (implicit/field semantics)
+    normalized: degree
+    standard_label: Degree
+    uri: http://qudt.org/vocab/unit/DEG
+  - fields:
+    - altitude
+    - point-cloud Z
+    - gps_xy_stddev
+    - gps_z_stddev
+    - average_point_spacing
+    original: metre (supported by CRS/metadata; image altitude unit is CHECK)
+    normalized: m
+    standard_label: Meter
+    uri: http://qudt.org/vocab/unit/M
+  - fields:
+    - exposure_time
+    original: seconds (numeric camera exposure convention; CHECK)
+    normalized: s
+    standard_label: Second
+    uri: http://qudt.org/vocab/unit/SEC
+  - fields:
+    - speed_x
+    - speed_y
+    - speed_z
+    original: not explicitly stated
+    normalized: 'CHECK: m/s'
+    standard_label: Meter per Second
+    uri: http://qudt.org/vocab/unit/M-PER-SEC
+  - fields:
+    - boundary_area
+    original: square units; CRS is metre-based
+    normalized: m²
+    standard_label: Square Meter
+    uri: http://qudt.org/vocab/unit/M2
+  - fields:
+    - width
+    - height
+    - exif_width
+    - exif_height
+    original: pixels
+    normalized: pixel
+    standard_label: pixel
+    uri: null
+  - fields:
+    - density
+    original: points per square CRS unit
+    normalized: points/m²
+    standard_label: points per square metre
+    uri: null
+  vocabulary_enrichment:
+    note: Vocabulary searches were performed on source-field concepts. Only semantically
+      suitable returned concepts are asserted; unsuitable or absent results are left
+      unmapped.
+    selected:
+    - fields:
+      - latitude
+      vocabulary: AGROVOC
+      label: latitude
+      uri: http://aims.fao.org/aos/agrovoc/c_4222
+      definition: Imaginary lines parallel to the Equator used to measure north/south
+        position.
+    - fields:
+      - longitude
+      vocabulary: AGROVOC
+      label: longitude
+      uri: http://aims.fao.org/aos/agrovoc/c_52bebf31
+      definition: Imaginary north-south lines used to measure east/west position from
+        a reference meridian.
+    - fields:
+      - altitude
+      vocabulary: AGROVOC
+      label: altitude
+      uri: http://aims.fao.org/aos/agrovoc/c_316
+      definition: Distance above sea level.
+    - fields:
+      - camera_make
+      - camera_model
+      - camera_projection
+      vocabulary: AGROVOC
+      label: cameras
+      uri: http://aims.fao.org/aos/agrovoc/c_e5fb8acb
+      definition: Instrument with lens, shutter and image sensor used to capture and
+        store images.
+    - fields:
+      - speed_x
+      - speed_y
+      - speed_z
+      vocabulary: AGROVOC
+      label: speed
+      uri: http://aims.fao.org/aos/agrovoc/c_24248
+      definition: Magnitude of change of position; distance divided by time.
+    unmapped_after_search:
+    - filename
+    - image width
+    - image height
+    - RGB image
+    - exposure time
+    - ISO speed
+    - point cloud
+    - capture UUID
+    - f-number
+    - radiometric calibration
+    - black level
+    - gain
+    - vignetting
+    - irradiance
+    - GPS standard deviation
+    - Brown camera projection
+    - focal ratio
+    - camera distortion coefficients
+    - band index
+    rejected:
+    - field: orientation
+      reason: Returned AGROVOC orientation definition is too general and does not
+        specifically identify EXIF/camera orientation.
+    - field: utc_time
+      reason: Returned generic time concept is not specific enough to assert as a
+        semantic mapping.
+    - field: boundary_area
+      reason: Search for area returned no exact AGROVOC concept matching generic geometric
+        area; no mapping forced.
+  semantic_field_roles:
+    camera_make: sosa:Sensor / saref:Device descriptive attribute
+    camera_model: sosa:Sensor / saref:Device descriptive attribute
+    latitude: GeoSPARQL/WGS84 spatial coordinate
+    longitude: GeoSPARQL/WGS84 spatial coordinate
+    altitude: spatial/elevation result
+    utc_time: 'sosa:resultTime or sosa:phenomenonTime (CHECK: exact role cannot be
+      distinguished from source)'
+    band_name: observable/result-band descriptor
+    capture_uuid: observation/capture identifier
+    point_cloud_geometry: geo:Geometry
+    crs: spatial reference system identifier
+    boundary: geo:Geometry
+    camera: sosa:Sensor
+    image_capture: sosa:Observation (semantic modeling choice)
+  grounding_validation:
+    verified:
+    - 11 images
+    - DJI FC6360
+    - 1600x1300
+    - RGB
+    - capture timestamps
+    - coordinate ranges
+    - camera calibration values
+    - ODM 3.4.0
+    - Entwine 2.2.0
+    - EPSG:32634
+    - 628062 points
+    - point-cloud bounds
+    - 3503.072758 boundary area
+    - 0.4723316984 average point spacing
+    - 4.482350521 density
+    - 2648886-byte referenced LAZ
+    check_values:
+    - Dataset title and agricultural/remote-sensing theme are descriptive proposals
+      rather than explicit source metadata.
+    - Image altitude and exposure-time unit interpretations should be confirmed.
+    - speed_x/y/z as m/s should be confirmed.
+    - utc_time is normalized from Unix epoch milliseconds; its precise semantic role
+      (capture/phenomenon/result time) should be confirmed.
+    removed_or_not_asserted:
+    - No farm, crop, field/parcel, farmer, owner, publisher, license, access-rights
+      or purpose was inferred.
+    - No vocabulary URI was forced for fields where search results were absent or
+      semantically unsuitable.
+  provenance:
+    source_dataset: odm_bundle.txt
+    generated_elements:
+      DCAT-AP metadata: source extraction plus CHECK-marked descriptive proposals
+      semantic roles: DEMETER AIM / SOSA-SSN / GeoSPARQL knowledge base
+      unit identifiers: QUDT identifiers
+      controlled vocabulary mappings: connected vocabulary search service

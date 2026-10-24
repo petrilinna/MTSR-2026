@@ -1,0 +1,91 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+title: Reusable schema for UAV photogrammetry and georeferenced point-cloud semantic
+  data products
+type: object
+required:
+- data_product
+properties:
+  data_product:
+    type: object
+    required:
+    - title
+    - source
+    - dcat_ap
+    - source_structure
+    - standards
+    - units
+    - vocabulary_enrichment
+    - grounding_validation
+    - provenance
+    properties:
+      title:
+        type: string
+      source:
+        type: string
+      theme:
+        type:
+        - string
+        - 'null'
+      schema_status:
+        type: string
+      dcat_ap:
+        type: object
+        additionalProperties:
+          type: object
+          properties:
+            value: {}
+            source:
+              type:
+              - string
+              - 'null'
+          required:
+          - value
+          - source
+      source_structure:
+        type: object
+        properties:
+          bundle_components:
+            type: array
+            items:
+              type: string
+          images:
+            type: object
+          camera_calibration:
+            type: object
+          point_cloud:
+            type: object
+          processing:
+            type: object
+      standards:
+        type: array
+        items:
+          type: object
+          required:
+          - rank
+          - standard
+          - role
+      units:
+        type: array
+        items:
+          type: object
+          required:
+          - fields
+          - original
+          - normalized
+          - standard_label
+          - uri
+      vocabulary_enrichment:
+        type: object
+        required:
+        - selected
+        - unmapped_after_search
+      semantic_field_roles:
+        type: object
+      grounding_validation:
+        type: object
+        required:
+        - verified
+        - check_values
+        - removed_or_not_asserted
+      provenance:
+        type: object
