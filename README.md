@@ -5,9 +5,13 @@ Paper: Automated Generation and Semantic Enrichment of Data Products for Data Sp
 * Skosmos Flask api
   - Code: https://github.com/petrilinna/skosmosapi
  
-* Skosmof forked code
+* Skosmos forked code
    - https://github.com/petrilinna/Skosmos
- 
+    
+* https://skosmos-skosmos.2.rahtiapp.fi/en/
+   - vocabulary service, user interface
+   - Custom GPT uses this vocabulary via Flask API
+
 * Data products and schemas
   - in this repository *.yaml
 
