@@ -13,6 +13,7 @@ Paper: Automated Generation and Semantic Enrichment of Data Products for Data Sp
 
 * Custom-GPT 
   - tool https://chatgpt.com/g/g-6a06d7be6cec81918a4085717829e404-semantic-agricultural-data-product-tool
+     - attention: OpenAi announced that they will close all custom GPT tools at 11.12.2026. The custom GPT will be replaced with plugin tool. Regarding to this paper research this transforming process has started. Link to this plugin will be published here when it is ready.  
   - model prompts:
 
 "Your task is to analyze the provided agricultural dataset and generate a semantically enriched data product and a reusable YAML schema. Follow the steps below in the given order.
